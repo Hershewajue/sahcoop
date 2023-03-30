@@ -43,7 +43,7 @@ try {
         $utilitybill = $_POST['utilitybill'];
         $pswd = $_POST['pswd'];
 
-        $sql = "INSERT INTO 'register' (fname, lname, staffid, gender, mstatus, dob, addr, email, tel, position, appointmentdate, passport, bankname, contribution, sortcode, acctnum, branch, fnokname, fnokphone, fnokrel, fnokaddr, snokname, snokphone,snokrel, snokaddr, fgname, fgstaffid, sgname, sgstaffid, idcard, utilitybill, pswd) VALUES ($fname, $lname, $staffid, $gender, $mstatus, $dob, $addr, $email, $tel, $position, $appointmentdate, $passport, $bankname, $contribution, $sortcode, $acctnum, $branch, $fnokname, $fnokphone, $fnokrel, $fnokaddr, $snokname, $snokphone, $snokrel, $snokaddr, $fgname, $fgstaffid, $sgname, $sgstaffid, $idcard, $utilitybill, $pswd])";
+        $sql = "INSERT INTO registrations (fname, lname, staffid, gender, mstatus, dob, addr, email, tel, position, appointmentdate, passport, bankname, contribution, sortcode, acctnum, branch, fnokname, fnokphone, fnokrel, fnokaddr, snokname, snokphone,snokrel, snokaddr, fgname, fgstaffid, sgname, sgstaffid, idcard, utilitybill, pswd) VALUES ($fname, $lname, $staffid, $gender, $mstatus, $dob, $addr, $email, $tel, $position, $appointmentdate, $passport, $bankname, $contribution, $sortcode, $acctnum, $branch, $fnokname, $fnokphone, $fnokrel, $fnokaddr, $snokname, $snokphone, $snokrel, $snokaddr, $fgname, $fgstaffid, $sgname, $sgstaffid, $idcard, $utilitybill, $pswd])";
         // use exec() because no results are returned
         $conn->exec($sql);
         echo "New record created successfully";
@@ -116,7 +116,7 @@ $conn = null;
                         <div class="input-group col mt-3">
                             <span class="input-group-text">Gender:</span>
                             <select class="form-select" id="gender" name="gender">
-                                <option type="radio" id="male">Select one option</option>
+                                <option type="radio" id="male" readonly>Select one option</option>
                                 <option type="radio" id="male" name="male" value="m">Male</option>
                                 <option type="radio" id="female" name="female" value="f">Female</option>
                                 <option type="radio" id="other" name="other" value="o">Others</option>
@@ -127,7 +127,7 @@ $conn = null;
                         <div class="input-group col mt-3">
                             <span class="input-group-text">Marital status:</span>
                             <select class="form-select" id="mstatus" name="mstatus">
-                                <option>Select one option</option>
+                                <option readonly>Select one option</option>
                                 <option>Single</option>
                                 <option>Married</option>
                                 <option>Divorced</option>
@@ -143,7 +143,7 @@ $conn = null;
                     </div>
                     <div class="input-group mt-3">
                         <span class="input-group-text">Contact address:</span>
-                        <input type="text" class="form-control" id="addr"
+                        <input type="" class="form-control" id="addr"
                             placeholder="Enter the current contact address" name="addr" required>
                     </div>
                     <div class="input-group mt-3">
@@ -218,7 +218,7 @@ $conn = null;
                         </div>
                         <div class="input-group col mt-3">
                             <span class="input-group-text">Phone number:</span>
-                            <input type="number" class="form-control" id="fnokphone" name="fnokphone" required>
+                            <input type="tel" class="form-control" id="fnokphone" name="fnokphone" required>
                         </div>
                     </div>
                     <div class="row">
@@ -250,7 +250,7 @@ $conn = null;
                         </div>
                         <div class="input-group col mt-3">
                             <span class="input-group-text">Phone number:</span>
-                            <input type="number" class="form-control" id="snokphone" name="snokphone" required>
+                            <input type="tel" class="form-control" id="snokphone" name="snokphone" required>
                         </div>
                     </div>
                     <div class="row">

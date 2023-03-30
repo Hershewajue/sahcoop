@@ -79,6 +79,9 @@
         <div class="row">
             <div class="col-sm-3">
                 <h3 class="display-6">Quick Links</h3>
+                <li class="nav-link"><a style="text-decoration:none; font-size:1.2em;" href="login.php"><i class='fa fa-angle-right'></i> Members Login here</a></li>
+                <li class="nav-link"><a style="text-decoration:none; font-size:1.2em;" href="register.php"><i class='fa fa-angle-right'></i> Register as a member</a></li>
+                <li class="nav-link"><a style="text-decoration:none; font-size:1.2em;" href="tracking.php"><i class='fa fa-angle-right'></i> Track your registration progress</a></li>
             </div>
             <div class="col-sm-9">
                 <h2 class="display-6">Press Release</h2>

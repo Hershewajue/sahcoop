@@ -47,7 +47,7 @@
             <img class="img-thumbnail" width="400" height="400" src="img/tracking.jpg" alt="Sahco Logo">
         </div>
         <div class="col-sm-8 img-thumbnail">
-            <form method="post" action="connect.php" class="needs-validated mx-auto">
+            <form method="post" action="tracking.php" class="needs-validated mx-auto">
                 <h1 class="display-6 mt-4 mb-4">Application tracking</h1>
                 <div class="input-group mb-3 mt-3">
                     <span class="input-group-text">Application number or Staff ID:</span>
@@ -77,7 +77,7 @@
             <a href="#" target="_blank" class="youtube"><i class="fa fa-youtube"></i></a>
             <p class="text-white-50 mt-4">&copy; SAHCO Staff Multipurpose Cooperative Society 2023</p>
         </div>
-    </div><!--
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
@@ -115,7 +115,7 @@
             
             })
         });
-    </script>-->
+    </script>
 </body>
 
 </html>

@@ -43,11 +43,47 @@ try {
         $utilitybill = $_POST['utilitybill'];
         $pswd = $_POST['pswd'];
 
-        $sql = "INSERT INTO registration (fname, lname, staffid, gender, mstatus, dob, addr, email, tel, position, appointmentdate, passport, bankname, contribution, sortcode, acctnum, branch, fnokname, fnokphone, fnokrel, fnokaddr, snokname, snokphone,snokrel, snokaddr, fgname, fgstaffid, sgname, sgstaffid, idcard, utilitybill, pswd) VALUES ($fname, $lname, $staffid, $gender, $mstatus, $dob, $addr, $email, $tel, $position, $appointmentdate, $passport, $bankname, $contribution, $sortcode, $acctnum, $branch, $fnokname, $fnokphone, $fnokrel, $fnokaddr, $snokname, $snokphone, $snokrel, $snokaddr, $fgname, $fgstaffid, $sgname, $sgstaffid, $idcard, $utilitybill, $pswd])";
-        // use exec() because no results are returned
-        $conn->exec($sql);
+        $sql = "INSERT INTO registrations (fname, lname, staffid, gender, mstatus, dob, addr, email, tel, position, appointmentdate, passport, bankname, contribution, sortcode, acctnum, branch, fnokname, fnokphone, fnokrel, fnokaddr, snokname, snokphone,snokrel, snokaddr, fgname, fgstaffid, sgname, sgstaffid, idcard, utilitybill, pswd) VALUES (:fname, :lname, :staffid, :gender, :mstatus, :dob, :addr, :email, :tel, :position, :appointmentdate, :passport, :bankname, :contribution, :sortcode, :acctnum, :branch, :fnokname, :fnokphone, :fnokrel, :fnokaddr, :snokname, :snokphone, :snokrel, :snokaddr, :fgname, :fgstaffid, :sgname, :sgstaffid, :idcard, :utilitybill, :pswd)";
+
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':fname', $fname);
+        $stmt->bindParam(':lname', $lname);
+        $stmt->bindParam(':staffid', $staffid);
+        $stmt->bindParam(':gender', $gender);
+        $stmt->bindParam(':mstatus', $mstatus);
+        $stmt->bindParam(':dob', $dob);
+        $stmt->bindParam(':addr', $addr);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':tel', $tel);
+        $stmt->bindParam(':position', $position);
+        $stmt->bindParam(':appointmentdate', $appointmentdate);
+        $stmt->bindParam(':passport', $passport);
+        $stmt->bindParam(':bankname', $bankname);
+        $stmt->bindParam(':contribution', $contribution);
+        $stmt->bindParam(':sortcode', $sortcode);
+        $stmt->bindParam(':acctnum', $acctnum);
+        $stmt->bindParam(':branch', $branch);
+        $stmt->bindParam(':fnokname', $fnokname);
+        $stmt->bindParam(':fnokphone', $fnokphone);
+        $stmt->bindParam(':fnokrel', $fnokrel);
+        $stmt->bindParam(':fnokaddr', $fnokaddr);
+        $stmt->bindParam(':snokname', $snokname);
+        $stmt->bindParam(':snokphone', $snokphone);
+        $stmt->bindParam(':snokrel', $snokrel);
+        $stmt->bindParam(':snokaddr', $snokaddr);
+        $stmt->bindParam(':fgname', $fgname);
+        $stmt->bindParam(':fgstaffid', $fgstaffid);
+        $stmt->bindParam(':sgname', $sgname);
+        $stmt->bindParam(':sgstaffid', $sgstaffid);
+        $stmt->bindParam(':idcard', $idcard);
+        $stmt->bindParam(':utilitybill', $utilitybill);
+        $stmt->bindParam(':pswd', $pswd);
+        $stmt->execute();
+
+        if($stmt->execute()){
         echo "New record created successfully";
     }
+}
 } catch (PDOException $e) {
     echo "New record wasn't created.<br>" . $e->getMessage();
 }
@@ -142,8 +178,8 @@ $conn = null;
                     </div>
                     <div class="input-group mt-3">
                         <span class="input-group-text">Contact address:</span>
-                        <input type="" class="form-control" id="addr"
-                            placeholder="Enter the current contact address" name="addr" required>
+                        <input type="" class="form-control" id="addr" placeholder="Enter the current contact address"
+                            name="addr" required>
                     </div>
                     <div class="input-group mt-3">
                         <span class="input-group-text">Email address:</span>

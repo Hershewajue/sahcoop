@@ -1,12 +1,37 @@
 <?php
-require_once('connect.php');
+$servername = "localhost";
+$username = "root";
+$password = "";
 
-if(isset($_POST['login'])){
-    
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=sahcoop", $username, $password);
+    // set the PDO error mode to exception
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Connected successfully";
+
+    if (isset($_POST['login'])) {
+        $staffid = $_POST['staffid'];
+        $pswd = $_POST['pswd'];
+
+        $stmt = $conn->prepare("SELECT fname FROM registrations WHERE (staffid=:staffid OR email=:staffid) AND pswd=:pswd");
+        $stmt->bindParam(':staffid', $staffid);
+        $stmt->bindParam(':pswd', $pswd);
+        $stmt->execute();
+
+        if ($stmt->rowCount() == 1) {
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            $fname = $row['fname'];
+            echo "Welcome, $fname";
+        } else {
+            echo "Invalid credentials";
+        }
+    }
+} catch (PDOException $e) {
+    echo "Error: " . $e->getMessage();
 }
-
-
+$conn = null;
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -51,16 +76,16 @@ if(isset($_POST['login'])){
             <img class="img-thumbnail" width="400" height="400" src="img/login.jpg" alt="Login">
         </div>
         <div class="col-sm-8 img-thumbnail">
-            <form method="post" action="connect.php" class="needs-validated mx-auto">
+            <form method="post" action="login.php" class="needs-validated mx-auto">
                 <h1 class="display-6 mt-4 mb-4">Login</h1>
                 <div class="input-group mb-3 mt-3">
                     <span class="input-group-text">Email or Staff ID:</span>
                     <input type="text" class="form-control" id="user"
-                        placeholder="Enter email or staff number (SAH-0000)" name="user" required>
+                        placeholder="Enter email or staff number (SAH-0000)" name="staffid" required>
                 </div>
                 <div class="input-group mt-4 mb-3">
                     <span class="input-group-text">Password:</span>
-                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pass"
+                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd"
                         required>
                 </div>
                 <div class="form-floating row">
@@ -106,7 +131,7 @@ if(isset($_POST['login'])){
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
+
     <script type="text/javascript">
         $(function () {
             $('#login').click(function (e) {
@@ -116,29 +141,29 @@ if(isset($_POST['login'])){
                     //e.preventDefault();
                     //alert("true");
                     swal.fire({
-                'title': 'Hello User!',
-                'text': 'Record was submitted successfully!',
-                'type': 'success'
-            })
+                        'title': 'Hello User!',
+                        'text': 'Record was submitted successfully!',
+                        'type': 'success'
+                    })
                 } else {
                     //alert("false");
                     swal.fire({
-                'title': 'Hello User!',
-                'text': 'There was some errors submitting your data',
-                'type': 'success'
-            })
+                        'title': 'Hello User!',
+                        'text': 'There was some errors submitting your data',
+                        'type': 'success'
+                    })
                 }
 
                 var fname = $('#fname').val();
                 var lname = $('#fname').val();
-                
-                 
+
+
             })
             swal.fire({
                 'title': 'Hello User!',
                 'text': 'Welcome to the our Login page',
                 'type': 'success'
-            
+
             })
         });
     </script>

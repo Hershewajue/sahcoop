@@ -41,7 +41,7 @@ try {
         $sgstaffid = $_POST['sgstaffid'];
         $idcard = $_POST['idcard'];
         $utilitybill = $_POST['utilitybill'];
-        $pswd = $_POST['pswd'];
+        $pswd = sha1($_POST['pswd']);
 
         $sql = "INSERT INTO registrations (fname, lname, staffid, gender, mstatus, dob, addr, email, tel, position, appointmentdate, passport, bankname, contribution, sortcode, acctnum, branch, fnokname, fnokphone, fnokrel, fnokaddr, snokname, snokphone,snokrel, snokaddr, fgname, fgstaffid, sgname, sgstaffid, idcard, utilitybill, pswd) VALUES (:fname, :lname, :staffid, :gender, :mstatus, :dob, :addr, :email, :tel, :position, :appointmentdate, :passport, :bankname, :contribution, :sortcode, :acctnum, :branch, :fnokname, :fnokphone, :fnokrel, :fnokaddr, :snokname, :snokphone, :snokrel, :snokaddr, :fgname, :fgstaffid, :sgname, :sgstaffid, :idcard, :utilitybill, :pswd)";
 
@@ -78,7 +78,7 @@ try {
         $stmt->bindParam(':idcard', $idcard);
         $stmt->bindParam(':utilitybill', $utilitybill);
         $stmt->bindParam(':pswd', $pswd);
-        $stmt->execute();
+        //$stmt->execute();
 
         if ($stmt->execute()) {
             //echo "New record created successfully";
@@ -391,49 +391,49 @@ $conn = null;
 
                 var valid = this.form.checkValidity();
                 if (valid) {
-                    var fname       = $('fname').val();
-                    var lname       = $('lname').val();
-                    var staffid     = $('staffid').val();
-                    var gender      = $('gender').val();
-                    var mstatus     = $('mstatus').val();
-                    var dob         = $('dob').val();
-                    var addr        = $('addr').val();
-                    var email       = $('email').val();
-                    var tel         = $('tel').val();
-                    var position    = $('position').val();
+                    var fname = $('fname').val();
+                    var lname = $('lname').val();
+                    var staffid = $('staffid').val();
+                    var gender = $('gender').val();
+                    var mstatus = $('mstatus').val();
+                    var dob = $('dob').val();
+                    var addr = $('addr').val();
+                    var email = $('email').val();
+                    var tel = $('tel').val();
+                    var position = $('position').val();
                     var appointmentdate = $('appointmentdate').val();
-                    var passport    = $('passport').val();
-                    var bankname    = $('bankname').val();
+                    var passport = $('passport').val();
+                    var bankname = $('bankname').val();
                     var contribution = $('contribution').val();
-                    var sortcode    = $('sortcode').val();
-                    var acctnum     = $('acctnum').val();
-                    var branch      = $('branch').val();
-                    var fnokname    = $('fnokname').val();
-                    var fnokphone   = $('fnokphone').val();
-                    var fnokrel     = $('fnokrel').val();
-                    var fnokaddr    = $('fnokaddr').val();
-                    var snokname    = $('snokname').val();
-                    var snokphone   = $('snokphone').val();
-                    var snokrel     = $('snokrel').val();
-                    var snokaddr    = $('snokaddr').val();
-                    var fgname      = $('fgname').val();
-                    var fgstaffid   = $('fgstaffid').val();
-                    var sgname      = $('sgname').val();
-                    var sgstaffid   = $('sgstaffid').val();
-                    var idcard      = $('idcard').val();
+                    var sortcode = $('sortcode').val();
+                    var acctnum = $('acctnum').val();
+                    var branch = $('branch').val();
+                    var fnokname = $('fnokname').val();
+                    var fnokphone = $('fnokphone').val();
+                    var fnokrel = $('fnokrel').val();
+                    var fnokaddr = $('fnokaddr').val();
+                    var snokname = $('snokname').val();
+                    var snokphone = $('snokphone').val();
+                    var snokrel = $('snokrel').val();
+                    var snokaddr = $('snokaddr').val();
+                    var fgname = $('fgname').val();
+                    var fgstaffid = $('fgstaffid').val();
+                    var sgname = $('sgname').val();
+                    var sgstaffid = $('sgstaffid').val();
+                    var idcard = $('idcard').val();
                     var utilitybill = $('utilitybill').val();
-                    var pswd        = $('pswd').val();
+                    var pswd = $('pswd').val();
 
-                    e.preventDefault();
+                    //e.preventDefault();
 
                     $.ajax({
                         type: 'POST',
                         url: 'connect.php',
-                        data: {fname: fname, lname: lname, staffid: staffid, gender: gender, mstatus: mstatus, dob: dob, addr: addr, email: email, tel: tel, position: position, appointmentdate: appointmentdate, passport: passport, bankname: bankname, contribution: contribution, sortcode: sortcode, acctnum: acctnum, branch: branch, fnokname: fnokname, fnokphone: fnokphone, fnokrel: fnokrel, fnokaddr: fnokaddr, snokname: snokname, snokphone: snokphone, snokrel: snokrel, snokaddr: snokaddr, fgname: fgname, fgstaffid: fgstaffid, sgname: sgname, sgstaffid: sgstaffid, idcard: idcard, utilitybill: utilitybill, pswd: pswd },
+                        data: { fname: fname, lname: lname, staffid: staffid, gender: gender, mstatus: mstatus, dob: dob, addr: addr, email: email, tel: tel, position: position, appointmentdate: appointmentdate, passport: passport, bankname: bankname, contribution: contribution, sortcode: sortcode, acctnum: acctnum, branch: branch, fnokname: fnokname, fnokphone: fnokphone, fnokrel: fnokrel, fnokaddr: fnokaddr, snokname: snokname, snokphone: snokphone, snokrel: snokrel, snokaddr: snokaddr, fgname: fgname, fgstaffid: fgstaffid, sgname: sgname, sgstaffid: sgstaffid, idcard: idcard, utilitybill: utilitybill, pswd: pswd },
                         success: function (data) {
                             swal.fire({
                                 'title': 'Successful',
-                                'text': 'User was successfully registered!',
+                                'text': data,
                                 'type': 'success'
                             })
                         },

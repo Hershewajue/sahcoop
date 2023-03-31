@@ -2,30 +2,29 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
+$db = "sahcoop";
 
-try {
-    $conn = new PDO("mysql:host=$servername;dbname=sahcoop", $username, $password);
-    // set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connected successfully";
-
-    if (isset($_POST['submit2'])) {
-        $uname = $_POST['uname'];
-        $pswd = $_POST['pswd'];
-        $remb = $_POST['remb'];
-
-        $sql = "INSERT INTO table1 (uname, pswd, remb) VALUES ($uname, $pswd, $remb)";
-        // use exec() because no results are returned
-        $conn->exec($sql);
-        echo "New record created successfully";
-    }
-} catch (PDOException $e) {
-    echo "New record wasn't created.<br>" . $e->getMessage();
+// Create connection
+$conn = new mysqli($servername, $username, $password, $db);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 
+if (isset($_POST['submit2'])) {
+    $uname = $_POST['uname'];
+    $pswd = $_POST['pswd'];
+    $remb = $_POST['remb'];
 
-$conn = null;
+    $sql = "INSERT INTO table1 (uname, pswd, remb) VALUES ($uname, $pswd, $remb)";
 
+    if ($conn->query($sql) === TRUE) {
+        echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
+$conn->close();
 ?>
 
 <html>

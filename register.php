@@ -43,7 +43,7 @@ try {
         $utilitybill = $_POST['utilitybill'];
         $pswd = $_POST['pswd'];
 
-        $sql = "INSERT INTO registrations (fname, lname, staffid, gender, mstatus, dob, addr, email, tel, position, appointmentdate, passport, bankname, contribution, sortcode, acctnum, branch, fnokname, fnokphone, fnokrel, fnokaddr, snokname, snokphone,snokrel, snokaddr, fgname, fgstaffid, sgname, sgstaffid, idcard, utilitybill, pswd) VALUES ($fname, $lname, $staffid, $gender, $mstatus, $dob, $addr, $email, $tel, $position, $appointmentdate, $passport, $bankname, $contribution, $sortcode, $acctnum, $branch, $fnokname, $fnokphone, $fnokrel, $fnokaddr, $snokname, $snokphone, $snokrel, $snokaddr, $fgname, $fgstaffid, $sgname, $sgstaffid, $idcard, $utilitybill, $pswd])";
+        $sql = "INSERT INTO registration (fname, lname, staffid, gender, mstatus, dob, addr, email, tel, position, appointmentdate, passport, bankname, contribution, sortcode, acctnum, branch, fnokname, fnokphone, fnokrel, fnokaddr, snokname, snokphone,snokrel, snokaddr, fgname, fgstaffid, sgname, sgstaffid, idcard, utilitybill, pswd) VALUES ($fname, $lname, $staffid, $gender, $mstatus, $dob, $addr, $email, $tel, $position, $appointmentdate, $passport, $bankname, $contribution, $sortcode, $acctnum, $branch, $fnokname, $fnokphone, $fnokrel, $fnokaddr, $snokname, $snokphone, $snokrel, $snokaddr, $fgname, $fgstaffid, $sgname, $sgstaffid, $idcard, $utilitybill, $pswd])";
         // use exec() because no results are returned
         $conn->exec($sql);
         echo "New record created successfully";
@@ -51,7 +51,6 @@ try {
 } catch (PDOException $e) {
     echo "New record wasn't created.<br>" . $e->getMessage();
 }
-//}
 
 $conn = null;
 ?>

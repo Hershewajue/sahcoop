@@ -52,6 +52,8 @@ $conn = null;
 </head>
 
 <body>
+    
+    <!-- Navigations -->
     <div class="container-fluid">
         <a href="index.php"><img src="img/coop logo.png" class="mx-auto d-block rounded img-fluid" alt="Coop logo"></a>
         <nav class="navbar navbar-expand-sm navbar-light justify-content-center" style="background-color: orange;">
@@ -71,6 +73,8 @@ $conn = null;
             </ul>
         </nav>
     </div>
+    
+    <!-- Login form starts here -->
     <div class="container mt-5 text-center row justify-content-center mx-auto">
         <div class="col-sm-4 ">
             <img class="img-thumbnail" width="400" height="400" src="img/login.jpg" alt="Login">
@@ -109,6 +113,7 @@ $conn = null;
         </div>
     </div>
 
+    <!-- Footer -->
     <div class="container-fluid mt-5 p-4 bg-dark text-white row">
         <div class="col-sm-6">
             <h3 class="display-6">Contact Us</h3>
@@ -131,7 +136,8 @@ $conn = null;
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+    
+    <!-- Javascripts starts here -->
     <script type="text/javascript">
         $(function () {
             $('#login').click(function (e) {

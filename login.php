@@ -145,7 +145,7 @@ $conn = null;
     <script type="text/javascript">
         $(function () {
             $('#login').click(function (e) {
-                e.preventDefault();
+                //e.preventDefault();
                 var valid = this.form.checkValidity();
                 if (valid) {
                     swal.fire({

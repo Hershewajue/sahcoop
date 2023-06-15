@@ -6,7 +6,6 @@ $password = "";
 try {
     $conn = new PDO("mysql:host=$servername;dbname=sahcoop", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connected successfully";
 
     if (isset($_POST['login'])) {
         $staffid = $_POST['staffid'];
@@ -146,36 +145,32 @@ $conn = null;
     <script type="text/javascript">
         $(function () {
             $('#login').click(function (e) {
-
+                e.preventDefault();
                 var valid = this.form.checkValidity();
                 if (valid) {
-                    //e.preventDefault();
-                    //alert("true");
                     swal.fire({
                         'title': 'Hello User!',
                         'text': 'Record was submitted successfully!',
                         'type': 'success'
-                    })
+                    });
                 } else {
-                    //alert("false");
                     swal.fire({
                         'title': 'Hello User!',
-                        'text': 'There was some errors submitting your data',
-                        'type': 'success'
-                    })
+                        'text': 'There were some errors submitting your data',
+                        'type': 'error'
+                    });
                 }
 
                 var fname = $('#fname').val();
-                var lname = $('#fname').val();
+                var lname = $('#lname').val();
 
+            });
 
-            })
             swal.fire({
                 'title': 'Hello User!',
-                'text': 'Welcome to the our Login page',
+                'text': 'Welcome to our Login page',
                 'type': 'success'
-
-            })
+            });
         });
     </script>
 </body>

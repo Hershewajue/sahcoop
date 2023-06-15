@@ -42,8 +42,7 @@ try {
             echo "Passwords do not match. Please try again.";
             exit;
         }
-        // Check if email or staffid exists in the database
-        $stmt = $conn->prepare("SELECT COUNT(*) FROM registrations WHERE email = :email");
+        // Check if email or staffid exists in the database$stmt = $conn->prepare("SELECT COUNT(*) FROM registrations WHERE email = :email");
         $stmt->bindParam(':email', $email);
         $stmt->execute();
         $result = $stmt->fetchColumn();
@@ -398,7 +397,7 @@ $conn = null;
     <script type="text/javascript">
         $(function () {
             $('#register').click(function (e) {
-                //e.preventDefault();
+                e.preventDefault();
 
                 var valid = validateForm();
                 if (valid) {

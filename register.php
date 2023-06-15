@@ -100,6 +100,17 @@ $conn = null;
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src='main.js'></script>
+    <script>
+    function validateForm() {
+      var password1 = document.getElementById("pswd").value;
+      var password2 = document.getElementById("pswd2").value;
+
+      if (password1 !== password2) {
+        alert("Passwords do not match. Please try again.");
+        return false;
+      }
+    }
+  </script>
 </head>
 
 <body>

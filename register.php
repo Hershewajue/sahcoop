@@ -37,8 +37,19 @@ try {
         $pswd = $_POST['pswd'];
         $pswd2 = $_POST['pswd2'];
 
+        // Check for password mismatch
         if ($pswd !== $pswd2) {
             echo "Passwords do not match. Please try again.";
+            exit;
+        }
+        // Check if email or staffid exists in the database
+        $stmt = $conn->prepare("SELECT COUNT(*) FROM registrations WHERE email = :email");
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
+        $result = $stmt->fetchColumn();
+
+        if ($result > 0) {
+            echo "Email already exists. Please try to login again or use forgot password option.";
             exit;
         }
 
@@ -105,7 +116,7 @@ $conn = null;
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src='main.js'></script>
-    
+
 </head>
 
 <body>
@@ -130,7 +141,7 @@ $conn = null;
     </div>
     <div class="container mt-5 text-center row justify-content-center mx-auto">
         <div class="col-sm-12 img-thumbnail" style="background-color:lightgrey">
-            <form method="post" action="register.php" class="needs-validated">
+            <form method="post" action="login.php" class="needs-validated">
                 <h1 class="display-6">Membership Application</h1>
                 <fieldset class="form-group img-thumbnail p-2 mt-3">
                     <legend class="w-auto px-2">Personal Data</legend>
@@ -385,81 +396,81 @@ $conn = null;
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script type="text/javascript">
-    $(function () {
-        $('#register').click(function (e) {
-            //e.preventDefault();
+        $(function () {
+            $('#register').click(function (e) {
+                //e.preventDefault();
 
-            var valid = validateForm();
-            if (valid) {
-                var formData = {
-                    fname: $('#fname').val(),
-                    lname: $('#lname').val(),
-                    staffid: $('#staffid').val(),
-                    gender: $('#gender').val(),
-                    mstatus: $('#mstatus').val(),
-                    dob: $('#dob').val(),
-                    addr: $('#addr').val(),
-                    email: $('#email').val(),
-                    tel: $('#tel').val(),
-                    position: $('#position').val(),
-                    appointmentdate: $('#appointmentdate').val(),
-                    passport: $('#passport').val(),
-                    bankname: $('#bankname').val(),
-                    contribution: $('#contribution').val(),
-                    sortcode: $('#sortcode').val(),
-                    acctnum: $('#acctnum').val(),
-                    branch: $('#branch').val(),
-                    fnokname: $('#fnokname').val(),
-                    fnokphone: $('#fnokphone').val(),
-                    fnokrel: $('#fnokrel').val(),
-                    fnokaddr: $('#fnokaddr').val(),
-                    snokname: $('#snokname').val(),
-                    snokphone: $('#snokphone').val(),
-                    snokrel: $('#snokrel').val(),
-                    snokaddr: $('#snokaddr').val(),
-                    fgname: $('#fgname').val(),
-                    fgstaffid: $('#fgstaffid').val(),
-                    sgname: $('#sgname').val(),
-                    sgstaffid: $('#sgstaffid').val(),
-                    idcard: $('#idcard').val(),
-                    utilitybill: $('#utilitybill').val(),
-                    pswd: $('#pswd').val()
-                };
+                var valid = validateForm();
+                if (valid) {
+                    var formData = {
+                        fname: $('#fname').val(),
+                        lname: $('#lname').val(),
+                        staffid: $('#staffid').val(),
+                        gender: $('#gender').val(),
+                        mstatus: $('#mstatus').val(),
+                        dob: $('#dob').val(),
+                        addr: $('#addr').val(),
+                        email: $('#email').val(),
+                        tel: $('#tel').val(),
+                        position: $('#position').val(),
+                        appointmentdate: $('#appointmentdate').val(),
+                        passport: $('#passport').val(),
+                        bankname: $('#bankname').val(),
+                        contribution: $('#contribution').val(),
+                        sortcode: $('#sortcode').val(),
+                        acctnum: $('#acctnum').val(),
+                        branch: $('#branch').val(),
+                        fnokname: $('#fnokname').val(),
+                        fnokphone: $('#fnokphone').val(),
+                        fnokrel: $('#fnokrel').val(),
+                        fnokaddr: $('#fnokaddr').val(),
+                        snokname: $('#snokname').val(),
+                        snokphone: $('#snokphone').val(),
+                        snokrel: $('#snokrel').val(),
+                        snokaddr: $('#snokaddr').val(),
+                        fgname: $('#fgname').val(),
+                        fgstaffid: $('#fgstaffid').val(),
+                        sgname: $('#sgname').val(),
+                        sgstaffid: $('#sgstaffid').val(),
+                        idcard: $('#idcard').val(),
+                        utilitybill: $('#utilitybill').val(),
+                        pswd: $('#pswd').val()
+                    };
 
-                $.ajax({
-                    type: 'POST',
-                    url: 'login.php',
-                    data: formData,
-                    success: function (data) {
-                        swal.fire({
-                            'title': 'Successful',
-                            'text': data,
-                            'type': 'success'
-                        })
-                    },
-                    error: function (data) {
-                        swal.fire({
-                            'title': 'Errors',
-                            'text': 'There were errors while saving the data.',
-                            'type': 'error'
-                        })
-                    }
-                });
-            }
+                    $.ajax({
+                        type: 'POST',
+                        url: 'connect.php',
+                        data: formData,
+                        success: function (data) {
+                            swal.fire({
+                                'title': 'Successful',
+                                'text': 'Registration successful, proceed to login',
+                                'type': 'success'
+                            })
+                        },
+                        error: function (data) {
+                            swal.fire({
+                                'title': 'Errors',
+                                'text': 'There were errors while saving the data.',
+                                'type': 'error'
+                            })
+                        }
+                    });
+                }
+            });
         });
-    });
 
-    function validateForm() {
-        var password1 = document.getElementById("pswd").value;
-        var password2 = document.getElementById("pswd2").value;
+        function validateForm() {
+            var password1 = document.getElementById("pswd").value;
+            var password2 = document.getElementById("pswd2").value;
 
-        if (password1 !== password2) {
-            alert("Passwords do not match. Please try again.");
-            return false;
+            if (password1 !== password2) {
+                alert("Passwords do not match. Please try again.");
+                return false;
+            }
+            return true;
         }
-        return true;
-    }
-</script>
+    </script>
 </body>
 
 </html>

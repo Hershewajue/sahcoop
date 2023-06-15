@@ -5,7 +5,6 @@ $password = "";
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=sahcoop", $username, $password);
-    // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     echo "Connected successfully";
 
@@ -13,15 +12,20 @@ try {
         $staffid = $_POST['staffid'];
         $pswd = $_POST['pswd'];
 
-        $stmt = $conn->prepare("SELECT fname FROM registrations WHERE (staffid=:staffid OR email=:staffid) AND pswd=:pswd");
+        $stmt = $conn->prepare("SELECT fname, pswd FROM registrations WHERE (staffid=:staffid OR email=:staffid)");
         $stmt->bindParam(':staffid', $staffid);
-        $stmt->bindParam(':pswd', $pswd);
         $stmt->execute();
 
         if ($stmt->rowCount() == 1) {
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
-            $fname = $row['fname'];
-            echo "Welcome, $fname";
+            $storedPswd = $row['pswd'];
+
+            if (password_verify($pswd, $storedPswd)) {
+                $fname = $row['fname'];
+                echo "Welcome, $fname";
+            } else {
+                echo "Invalid credentials";
+            }
         } else {
             echo "Invalid credentials";
         }
@@ -31,6 +35,7 @@ try {
 }
 $conn = null;
 ?>
+
 
 
 <!DOCTYPE html>
@@ -52,7 +57,7 @@ $conn = null;
 </head>
 
 <body>
-    
+
     <!-- Navigations -->
     <div class="container-fluid">
         <a href="index.php"><img src="img/coop logo.png" class="mx-auto d-block rounded img-fluid" alt="Coop logo"></a>
@@ -73,7 +78,7 @@ $conn = null;
             </ul>
         </nav>
     </div>
-    
+
     <!-- Login form starts here -->
     <div class="container mt-5 text-center row justify-content-center mx-auto">
         <div class="col-sm-4 ">
@@ -136,7 +141,7 @@ $conn = null;
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
+
     <!-- Javascripts starts here -->
     <script type="text/javascript">
         $(function () {

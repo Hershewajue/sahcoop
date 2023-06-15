@@ -453,10 +453,13 @@ $conn = null;
             var password2 = document.getElementById("pswd2").value;
 
             if (password1 !== password2) {
-                alert("Passwords do not match. Please try again.");
-                return false;
+                swal({
+                    title: "Password mismatch!",
+                    text: "Passwords do not match. Please try again.",
+                    type: "warning",
+                    
+                });
             }
-            return true;
         }
     </script>
 

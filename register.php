@@ -1,7 +1,7 @@
 <?php
 require_once('connect.php');
-try {
 
+try {
     if (isset($_POST['register'])) {
         $fname = $_POST['fname'];
         $lname = $_POST['lname'];
@@ -35,8 +35,14 @@ try {
         $idcard = $_POST['idcard'];
         $utilitybill = $_POST['utilitybill'];
         $pswd = $_POST['pswd'];
+        $pswd2 = $_POST['pswd2'];
 
-        $sql = "INSERT INTO registrations (fname, lname, staffid, gender, mstatus, dob, addr, email, tel, position, appointmentdate, passport, bankname, contribution, sortcode, acctnum, branch, fnokname, fnokphone, fnokrel, fnokaddr, snokname, snokphone,snokrel, snokaddr, fgname, fgstaffid, sgname, sgstaffid, idcard, utilitybill, pswd) VALUES (:fname, :lname, :staffid, :gender, :mstatus, :dob, :addr, :email, :tel, :position, :appointmentdate, :passport, :bankname, :contribution, :sortcode, :acctnum, :branch, :fnokname, :fnokphone, :fnokrel, :fnokaddr, :snokname, :snokphone, :snokrel, :snokaddr, :fgname, :fgstaffid, :sgname, :sgstaffid, :idcard, :utilitybill, :pswd)";
+        if ($pswd !== $pswd2) {
+            echo "Passwords do not match. Please try again.";
+            exit;
+        }
+
+        $sql = "INSERT INTO registrations (fname, lname, staffid, gender, mstatus, dob, addr, email, tel, position, appointmentdate, passport, bankname, contribution, sortcode, acctnum, branch, fnokname, fnokphone, fnokrel, fnokaddr, snokname, snokphone, snokrel, snokaddr, fgname, fgstaffid, sgname, sgstaffid, idcard, utilitybill, pswd) VALUES (:fname, :lname, :staffid, :gender, :mstatus, :dob, :addr, :email, :tel, :position, :appointmentdate, :passport, :bankname, :contribution, :sortcode, :acctnum, :branch, :fnokname, :fnokphone, :fnokrel, :fnokaddr, :snokname, :snokphone, :snokrel, :snokaddr, :fgname, :fgstaffid, :sgname, :sgstaffid, :idcard, :utilitybill, :pswd)";
 
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':fname', $fname);
@@ -71,10 +77,9 @@ try {
         $stmt->bindParam(':idcard', $idcard);
         $stmt->bindParam(':utilitybill', $utilitybill);
         $stmt->bindParam(':pswd', $pswd);
-        //$stmt->execute();
 
         if ($stmt->execute()) {
-            //echo "New record created successfully";
+            echo "New record created successfully";
         }
     }
 } catch (PDOException $e) {
@@ -100,7 +105,7 @@ $conn = null;
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src='main.js'></script>
-
+    
 </head>
 
 <body>
@@ -378,92 +383,83 @@ $conn = null;
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script type="text/javascript">
-        $(function () {
-            $('#register').click(function (e) {
-                e.preventDefault();
-                var valid = validateForm();
-                if (valid) {
-                    var fname = $('fname').val();
-                    var lname = $('lname').val();
-                    var staffid = $('staffid').val();
-                    var gender = $('gender').val();
-                    var mstatus = $('mstatus').val();
-                    var dob = $('dob').val();
-                    var addr = $('addr').val();
-                    var email = $('email').val();
-                    var tel = $('tel').val();
-                    var position = $('position').val();
-                    var appointmentdate = $('appointmentdate').val();
-                    var passport = $('passport').val();
-                    var bankname = $('bankname').val();
-                    var contribution = $('contribution').val();
-                    var sortcode = $('sortcode').val();
-                    var acctnum = $('acctnum').val();
-                    var branch = $('branch').val();
-                    var fnokname = $('fnokname').val();
-                    var fnokphone = $('fnokphone').val();
-                    var fnokrel = $('fnokrel').val();
-                    var fnokaddr = $('fnokaddr').val();
-                    var snokname = $('snokname').val();
-                    var snokphone = $('snokphone').val();
-                    var snokrel = $('snokrel').val();
-                    var snokaddr = $('snokaddr').val();
-                    var fgname = $('fgname').val();
-                    var fgstaffid = $('fgstaffid').val();
-                    var sgname = $('sgname').val();
-                    var sgstaffid = $('sgstaffid').val();
-                    var idcard = $('idcard').val();
-                    var utilitybill = $('utilitybill').val();
-                    var pswd = $('pswd').val();
-                    var pswd2 = $('pswd2').val();
+    $(function () {
+        $('#register').click(function (e) {
+            e.preventDefault();
 
-                    $.ajax({
-                        type: 'POST',
-                        url: 'connect.php',
-                        data: {
-                            fname: fname, lname: lname, staffid: staffid, gender: gender, mstatus: mstatus, dob: dob, addr: addr, email: email,
-                            tel: tel, position: position, appointmentdate: appointmentdate, passport: passport, bankname: bankname,
-                            contribution: contribution, sortcode: sortcode, acctnum: acctnum, branch: branch, fnokname: fnokname,
-                            fnokphone: fnokphone, fnokrel: fnokrel, fnokaddr: fnokaddr, snokname: snokname, snokphone: snokphone,
-                            snokrel: snokrel, snokaddr: snokaddr, fgname: fgname, fgstaffid: fgstaffid, sgname: sgname, sgstaffid: sgstaffid,
-                            idcard: idcard, utilitybill: utilitybill, pswd: pswd
-                        },
-                        success: function (data) {
-                            swal.fire({
-                                'title': 'Successful',
-                                'text': data,
-                                'type': 'success'
-                            })
-                        },
-                        error: function (data) {
-                            swal.fire({
-                                'title': 'Errors',
-                                'text': 'There were errors while saving the data.',
-                                'type': 'error'
-                            })
-                        }
-                    });
-                }
-            });
-        });
+            var valid = validateForm();
+            if (valid) {
+                var formData = {
+                    fname: $('#fname').val(),
+                    lname: $('#lname').val(),
+                    staffid: $('#staffid').val(),
+                    gender: $('#gender').val(),
+                    mstatus: $('#mstatus').val(),
+                    dob: $('#dob').val(),
+                    addr: $('#addr').val(),
+                    email: $('#email').val(),
+                    tel: $('#tel').val(),
+                    position: $('#position').val(),
+                    appointmentdate: $('#appointmentdate').val(),
+                    passport: $('#passport').val(),
+                    bankname: $('#bankname').val(),
+                    contribution: $('#contribution').val(),
+                    sortcode: $('#sortcode').val(),
+                    acctnum: $('#acctnum').val(),
+                    branch: $('#branch').val(),
+                    fnokname: $('#fnokname').val(),
+                    fnokphone: $('#fnokphone').val(),
+                    fnokrel: $('#fnokrel').val(),
+                    fnokaddr: $('#fnokaddr').val(),
+                    snokname: $('#snokname').val(),
+                    snokphone: $('#snokphone').val(),
+                    snokrel: $('#snokrel').val(),
+                    snokaddr: $('#snokaddr').val(),
+                    fgname: $('#fgname').val(),
+                    fgstaffid: $('#fgstaffid').val(),
+                    sgname: $('#sgname').val(),
+                    sgstaffid: $('#sgstaffid').val(),
+                    idcard: $('#idcard').val(),
+                    utilitybill: $('#utilitybill').val(),
+                    pswd: $('#pswd').val()
+                };
 
-        function validateForm() {
-            var password1 = document.getElementById("pswd").value;
-            var password2 = document.getElementById("pswd2").value;
-
-            if (password1 !== password2) {
-                swal({
-                    title: "Password mismatch!",
-                    text: "Passwords do not match. Please try again.",
-                    type: "warning",
-                    
+                $.ajax({
+                    type: 'POST',
+                    url: 'login.php',
+                    data: formData,
+                    success: function (data) {
+                        swal.fire({
+                            'title': 'Successful',
+                            'text': data,
+                            'type': 'success'
+                        })
+                    },
+                    error: function (data) {
+                        swal.fire({
+                            'title': 'Errors',
+                            'text': 'There were errors while saving the data.',
+                            'type': 'error'
+                        })
+                    }
                 });
             }
+        });
+    });
+
+    function validateForm() {
+        var password1 = document.getElementById("pswd").value;
+        var password2 = document.getElementById("pswd2").value;
+
+        if (password1 !== password2) {
+            alert("Passwords do not match. Please try again.");
+            return false;
         }
-    </script>
-
-
+        return true;
+    }
+</script>
 </body>
 
 </html>

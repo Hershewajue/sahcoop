@@ -1,7 +1,7 @@
 <?php
 require_once('connect.php');
 try {
-    
+
     if (isset($_POST['register'])) {
         $fname = $_POST['fname'];
         $lname = $_POST['lname'];
@@ -100,17 +100,7 @@ $conn = null;
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src='main.js'></script>
-    <script>
-    function validateForm() {
-      var password1 = document.getElementById("pswd").value;
-      var password2 = document.getElementById("pswd2").value;
 
-      if (password1 !== password2) {
-        alert("Passwords do not match. Please try again.");
-        return false;
-      }
-    }
-  </script>
 </head>
 
 <body>
@@ -388,52 +378,57 @@ $conn = null;
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
     <script type="text/javascript">
         $(function () {
             $('#register').click(function (e) {
-
-                var valid = this.form.checkValidity();
+                //e.preventDefault();
+                var valid = validateForm();
                 if (valid) {
-                    var fname       = $('fname').val();
-                    var lname       = $('lname').val();
-                    var staffid     = $('staffid').val();
-                    var gender      = $('gender').val();
-                    var mstatus     = $('mstatus').val();
-                    var dob         = $('dob').val();
-                    var addr        = $('addr').val();
-                    var email       = $('email').val();
-                    var tel         = $('tel').val();
-                    var position    = $('position').val();
+                    var fname = $('fname').val();
+                    var lname = $('lname').val();
+                    var staffid = $('staffid').val();
+                    var gender = $('gender').val();
+                    var mstatus = $('mstatus').val();
+                    var dob = $('dob').val();
+                    var addr = $('addr').val();
+                    var email = $('email').val();
+                    var tel = $('tel').val();
+                    var position = $('position').val();
                     var appointmentdate = $('appointmentdate').val();
-                    var passport    = $('passport').val();
-                    var bankname    = $('bankname').val();
+                    var passport = $('passport').val();
+                    var bankname = $('bankname').val();
                     var contribution = $('contribution').val();
-                    var sortcode    = $('sortcode').val();
-                    var acctnum     = $('acctnum').val();
-                    var branch      = $('branch').val();
-                    var fnokname    = $('fnokname').val();
-                    var fnokphone   = $('fnokphone').val();
-                    var fnokrel     = $('fnokrel').val();
-                    var fnokaddr    = $('fnokaddr').val();
-                    var snokname    = $('snokname').val();
-                    var snokphone   = $('snokphone').val();
-                    var snokrel     = $('snokrel').val();
-                    var snokaddr    = $('snokaddr').val();
-                    var fgname      = $('fgname').val();
-                    var fgstaffid   = $('fgstaffid').val();
-                    var sgname      = $('sgname').val();
-                    var sgstaffid   = $('sgstaffid').val();
-                    var idcard      = $('idcard').val();
+                    var sortcode = $('sortcode').val();
+                    var acctnum = $('acctnum').val();
+                    var branch = $('branch').val();
+                    var fnokname = $('fnokname').val();
+                    var fnokphone = $('fnokphone').val();
+                    var fnokrel = $('fnokrel').val();
+                    var fnokaddr = $('fnokaddr').val();
+                    var snokname = $('snokname').val();
+                    var snokphone = $('snokphone').val();
+                    var snokrel = $('snokrel').val();
+                    var snokaddr = $('snokaddr').val();
+                    var fgname = $('fgname').val();
+                    var fgstaffid = $('fgstaffid').val();
+                    var sgname = $('sgname').val();
+                    var sgstaffid = $('sgstaffid').val();
+                    var idcard = $('idcard').val();
                     var utilitybill = $('utilitybill').val();
-                    var pswd        = $('pswd').val();
-
-                    //e.preventDefault();
+                    var pswd = $('pswd').val();
+                    var pswd2 = $('pswd2').val();
 
                     $.ajax({
                         type: 'POST',
                         url: 'connect.php',
-                        data: {fname: fname, lname: lname, staffid: staffid, gender: gender, mstatus: mstatus, dob: dob, addr: addr, email: email, tel: tel, position: position, appointmentdate: appointmentdate, passport: passport, bankname: bankname, contribution: contribution, sortcode: sortcode, acctnum: acctnum, branch: branch, fnokname: fnokname, fnokphone: fnokphone, fnokrel: fnokrel, fnokaddr: fnokaddr, snokname: snokname, snokphone: snokphone, snokrel: snokrel, snokaddr: snokaddr, fgname: fgname, fgstaffid: fgstaffid, sgname: sgname, sgstaffid: sgstaffid, idcard: idcard, utilitybill: utilitybill, pswd: pswd },
+                        data: {
+                            fname: fname, lname: lname, staffid: staffid, gender: gender, mstatus: mstatus, dob: dob, addr: addr, email: email,
+                            tel: tel, position: position, appointmentdate: appointmentdate, passport: passport, bankname: bankname,
+                            contribution: contribution, sortcode: sortcode, acctnum: acctnum, branch: branch, fnokname: fnokname,
+                            fnokphone: fnokphone, fnokrel: fnokrel, fnokaddr: fnokaddr, snokname: snokname, snokphone: snokphone,
+                            snokrel: snokrel, snokaddr: snokaddr, fgname: fgname, fgstaffid: fgstaffid, sgname: sgname, sgstaffid: sgstaffid,
+                            idcard: idcard, utilitybill: utilitybill, pswd: pswd
+                        },
                         success: function (data) {
                             swal.fire({
                                 'title': 'Successful',
@@ -446,17 +441,18 @@ $conn = null;
                                 'title': 'Errors',
                                 'text': 'There were errors while saving the data.',
                                 'type': 'error'
-                 })
+                            })
                         }
                     });
                 }
                 else {
                     alert('Invalid');
                 }
-            })
-
+            });
         });
-    </script>
-</body>
+        <script>
 
-</html>
+
+        </body>
+
+</html >

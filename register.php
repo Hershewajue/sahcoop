@@ -50,12 +50,12 @@ try {
         $stmtCheckEmail->bindParam(':email', $email);
         $stmtCheckEmail->execute();
         $result = $stmtCheckEmail->fetchColumn();
-        
+
         if ($result > 0) {
             echo "Email already exists. Please try to login again or use the forgot password option.";
             exit;
         }
-        
+
         $sql = "INSERT INTO registrations (fname, lname, staffid, gender, mstatus, dob, addr, email, tel, position, appointmentdate, passport, bankname, contribution, sortcode, acctnum, branch, fnokname, fnokphone, fnokrel, fnokaddr, snokname, snokphone, snokrel, snokaddr, fgname, fgstaffid, sgname, sgstaffid, idcard, utilitybill, pswd) VALUES (:fname, :lname, :staffid, :gender, :mstatus, :dob, :addr, :email, :tel, :position, :appointmentdate, :passport, :bankname, :contribution, :sortcode, :acctnum, :branch, :fnokname, :fnokphone, :fnokrel, :fnokaddr, :snokname, :snokphone, :snokrel, :snokaddr, :fgname, :fgstaffid, :sgname, :sgstaffid, :idcard, :utilitybill, :pswd)";
 
         $stmtInsert = $conn->prepare($sql);
@@ -448,11 +448,18 @@ $conn = null;
                         url: 'connect.php',
                         data: formData,
                         success: function (data) {
-                            swal.fire({
-                                'title': 'Successful',
-                                'text': 'Registration successful, proceed to login',
-                                'type': 'success'
-                            })
+                            swal({
+                                title: "Account created!",
+                                text: "Do you want to log in!",
+                                type: "warning",
+                                showCancelButton: true,
+                                confirmButtonClass: "btn-danger",
+                                confirmButtonText: "Login!",
+                                closeOnConfirm: false
+                            }, function () {
+                                window.location.href = 'dashboard.php';
+                            });
+
                         },
                         error: function (data) {
                             swal.fire({

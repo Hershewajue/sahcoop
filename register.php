@@ -42,62 +42,67 @@ try {
             echo "Passwords do not match. Please try again.";
             exit;
         }
-        // Check if email or staffid exists in the database$stmt = $conn->prepare("SELECT COUNT(*) FROM registrations WHERE email = :email");
-        $stmt->bindParam(':email', $email);
-        $stmt->execute();
-        $result = $stmt->fetchColumn();
+
+        // Check if email or staffid exists in the database
+        $stmtCheckEmail = $conn->prepare("SELECT COUNT(*) FROM registrations WHERE email = :email");
+        $stmtCheckEmail->bindParam(':email', $email);
+        $stmtCheckEmail->execute();
+        $result = $stmtCheckEmail->fetchColumn();
 
         if ($result > 0) {
-            echo "Email already exists. Please try to login again or use forgot password option.";
+            echo "Email already exists. Please try to login again or use the forgot password option.";
             exit;
         }
 
         $sql = "INSERT INTO registrations (fname, lname, staffid, gender, mstatus, dob, addr, email, tel, position, appointmentdate, passport, bankname, contribution, sortcode, acctnum, branch, fnokname, fnokphone, fnokrel, fnokaddr, snokname, snokphone, snokrel, snokaddr, fgname, fgstaffid, sgname, sgstaffid, idcard, utilitybill, pswd) VALUES (:fname, :lname, :staffid, :gender, :mstatus, :dob, :addr, :email, :tel, :position, :appointmentdate, :passport, :bankname, :contribution, :sortcode, :acctnum, :branch, :fnokname, :fnokphone, :fnokrel, :fnokaddr, :snokname, :snokphone, :snokrel, :snokaddr, :fgname, :fgstaffid, :sgname, :sgstaffid, :idcard, :utilitybill, :pswd)";
 
-        $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':fname', $fname);
-        $stmt->bindParam(':lname', $lname);
-        $stmt->bindParam(':staffid', $staffid);
-        $stmt->bindParam(':gender', $gender);
-        $stmt->bindParam(':mstatus', $mstatus);
-        $stmt->bindParam(':dob', $dob);
-        $stmt->bindParam(':addr', $addr);
-        $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':tel', $tel);
-        $stmt->bindParam(':position', $position);
-        $stmt->bindParam(':appointmentdate', $appointmentdate);
-        $stmt->bindParam(':passport', $passport);
-        $stmt->bindParam(':bankname', $bankname);
-        $stmt->bindParam(':contribution', $contribution);
-        $stmt->bindParam(':sortcode', $sortcode);
-        $stmt->bindParam(':acctnum', $acctnum);
-        $stmt->bindParam(':branch', $branch);
-        $stmt->bindParam(':fnokname', $fnokname);
-        $stmt->bindParam(':fnokphone', $fnokphone);
-        $stmt->bindParam(':fnokrel', $fnokrel);
-        $stmt->bindParam(':fnokaddr', $fnokaddr);
-        $stmt->bindParam(':snokname', $snokname);
-        $stmt->bindParam(':snokphone', $snokphone);
-        $stmt->bindParam(':snokrel', $snokrel);
-        $stmt->bindParam(':snokaddr', $snokaddr);
-        $stmt->bindParam(':fgname', $fgname);
-        $stmt->bindParam(':fgstaffid', $fgstaffid);
-        $stmt->bindParam(':sgname', $sgname);
-        $stmt->bindParam(':sgstaffid', $sgstaffid);
-        $stmt->bindParam(':idcard', $idcard);
-        $stmt->bindParam(':utilitybill', $utilitybill);
-        $stmt->bindParam(':pswd', $pswd);
+        $stmtInsert = $conn->prepare($sql);
+        $stmtInsert->bindParam(':fname', $fname);
+        $stmtInsert->bindParam(':lname', $lname);
+        $stmtInsert->bindParam(':staffid', $staffid);
+        $stmtInsert->bindParam(':gender', $gender);
+        $stmtInsert->bindParam(':mstatus', $mstatus);
+        $stmtInsert->bindParam(':dob', $dob);
+        $stmtInsert->bindParam(':addr', $addr);
+        $stmtInsert->bindParam(':email', $email);
+        $stmtInsert->bindParam(':tel', $tel);
+        $stmtInsert->bindParam(':position', $position);
+        $stmtInsert->bindParam(':appointmentdate', $appointmentdate);
+        $stmtInsert->bindParam(':passport', $passport);
+        $stmtInsert->bindParam(':bankname', $bankname);
+        $stmtInsert->bindParam(':contribution', $contribution);
+        $stmtInsert->bindParam(':sortcode', $sortcode);
+        $stmtInsert->bindParam(':acctnum', $acctnum);
+        $stmtInsert->bindParam(':branch', $branch);
+        $stmtInsert->bindParam(':fnokname', $fnokname);
+        $stmtInsert->bindParam(':fnokphone', $fnokphone);
+        $stmtInsert->bindParam(':fnokrel', $fnokrel);
+        $stmtInsert->bindParam(':fnokaddr', $fnokaddr);
+        $stmtInsert->bindParam(':snokname', $snokname);
+        $stmtInsert->bindParam(':snokphone', $snokphone);
+        $stmtInsert->bindParam(':snokrel', $snokrel);
+        $stmtInsert->bindParam(':snokaddr', $snokaddr);
+        $stmtInsert->bindParam(':fgname', $fgname);
+        $stmtInsert->bindParam(':fgstaffid', $fgstaffid);
+        $stmtInsert->bindParam(':sgname', $sgname);
+        $stmtInsert->bindParam(':sgstaffid', $sgstaffid);
+        $stmtInsert->bindParam(':idcard', $idcard);
+        $stmtInsert->bindParam(':utilitybill', $utilitybill);
+        $stmtInsert->bindParam(':pswd', $pswd);
 
-        if ($stmt->execute()) {
+        if ($stmtInsert->execute()) {
             echo "New record created successfully";
+        } else {
+            echo "Failed to insert record into the database";
         }
     }
 } catch (PDOException $e) {
-    echo "New record wasn't created.<br>" . $e->getMessage();
+    echo "Error: " . $e->getMessage();
 }
 
 $conn = null;
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -140,7 +145,7 @@ $conn = null;
     </div>
     <div class="container mt-5 text-center row justify-content-center mx-auto">
         <div class="col-sm-12 img-thumbnail" style="background-color:lightgrey">
-            <form method="post" action="login.php" class="needs-validated">
+            <form method="post" action="register.php" class="needs-validated">
                 <h1 class="display-6">Membership Application</h1>
                 <fieldset class="form-group img-thumbnail p-2 mt-3">
                     <legend class="w-auto px-2">Personal Data</legend>

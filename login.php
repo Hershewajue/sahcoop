@@ -160,10 +160,30 @@ $conn = null;
                         data: formData,
                         success: function (response) {
                             if (response === 'success') {
-                                swal.fire({
-                                    title: 'Hello User!',
-                                    text: 'Record was submitted successfully!',
-                                    type: 'success'
+                                $.ajax({
+                                    type: 'POST',
+                                    url: 'get_fname.php',
+                                    data: formData,
+                                    success: function (fname) {
+                                        swal.fire({
+                                            title: 'Hello User!',
+                                            text: 'Record was submitted successfully!',
+                                            type: 'success'
+                                        }).then(function () {
+                                            swal.fire({
+                                                title: 'Hello User!',
+                                                text: 'Welcome, ' + fname,
+                                                type: 'success'
+                                            });
+                                        });
+                                    },
+                                    error: function (error) {
+                                        swal.fire({
+                                            title: 'Hello User!',
+                                            text: 'There was an error retrieving your name',
+                                            type: 'error'
+                                        });
+                                    }
                                 });
                             } else {
                                 swal.fire({
@@ -197,6 +217,7 @@ $conn = null;
             });
         });
     </script>
+
 
 </body>
 

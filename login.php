@@ -18,15 +18,16 @@ try {
         if ($stmt->rowCount() == 1) {
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
             $storedPswd = $row['pswd'];
+            echo "Record found in the database";
 
             if (password_verify($pswd, $storedPswd)) {
                 $fname = $row['fname'];
                 echo "Welcome, $fname";
             } else {
-                echo "Invalid credentials";
+                echo "We couldn't verify your password.";
             }
         } else {
-            echo "Invalid credentials";
+            echo "Record not found!";
         }
     }
 } catch (PDOException $e) {
@@ -148,31 +149,55 @@ $conn = null;
                 //e.preventDefault();
                 var valid = this.form.checkValidity();
                 if (valid) {
-                    swal.fire({
-                        'title': 'Hello User!',
-                        'text': 'Record was submitted successfully!',
-                        'type': 'success'
+                    var formData = {
+                        staffid: $('#staffid').val(),
+                        pswd: $('#pswd').val()
+                    };
+
+                    $.ajax({
+                        type: 'POST',
+                        url: 'login.php',
+                        data: formData,
+                        success: function (response) {
+                            if (response === 'success') {
+                                swal.fire({
+                                    title: 'Hello User!',
+                                    text: 'Record was submitted successfully!',
+                                    type: 'success'
+                                });
+                            } else {
+                                swal.fire({
+                                    title: 'Hello User!',
+                                    text: response,
+                                    type: 'error'
+                                });
+                            }
+                        },
+                        error: function (error) {
+                            swal.fire({
+                                title: 'Hello User!',
+                                text: 'There was an error submitting your data',
+                                type: 'error'
+                            });
+                        }
                     });
                 } else {
                     swal.fire({
-                        'title': 'Hello User!',
-                        'text': 'There were some errors submitting your data',
-                        'type': 'error'
+                        title: 'Hello User!',
+                        text: 'There were some errors in the form',
+                        type: 'error'
                     });
                 }
-
-                var fname = $('#fname').val();
-                var lname = $('#lname').val();
-
             });
 
             swal.fire({
-                'title': 'Hello User!',
-                'text': 'Welcome to our Login page',
-                'type': 'success'
+                title: 'Hello User!',
+                text: 'Welcome to our Login page',
+                type: 'success'
             });
         });
     </script>
+
 </body>
 
 </html>

@@ -105,7 +105,7 @@ $conn = null;
                         </label>
                     </div>
                     <div class="form-floating col-sm-4">
-                        <p class="form-check-label text-black-50"><a style="text-decoration: none;" href="#">Forgot
+                        <p class="form-check-label text-black-50"><a style="text-decoration: none;" href="recoverpswd.php">Forgot
                                 password?</a></p>
                     </div>
                     <div class="form-floating col-sm-5">
@@ -168,14 +168,8 @@ $conn = null;
                                     success: function (fname) {
                                         swal.fire({
                                             title: 'Hello User!',
-                                            text: 'Record was submitted successfully!',
+                                            text: 'Welcome, ' + fname,
                                             type: 'success'
-                                        }).then(function () {
-                                            swal.fire({
-                                                title: 'Hello User!',
-                                                text: 'Welcome, ' + fname,
-                                                type: 'success'
-                                            });
                                         });
                                     },
                                     error: function (error) {
@@ -189,7 +183,7 @@ $conn = null;
                             } else {
                                 swal.fire({
                                     title: 'Hello User!',
-                                    text: response,
+                                    text: 'Response was not received!',
                                     type: 'error'
                                 });
                             }

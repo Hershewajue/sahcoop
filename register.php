@@ -448,14 +448,14 @@ $conn = null;
                         url: 'connect.php',
                         data: formData,
                         success: function (data) {
-                            swal({
-                                title: "Account created!",
-                                text: "Do you want to log in!",
-                                type: "warning",
-                                showCancelButton: true,
-                                confirmButtonClass: "btn-danger",
-                                confirmButtonText: "Login!",
-                                closeOnConfirm: false
+                            swal.fire({
+                                'title': "Account created!",
+                                'text': "Do you want to log in!",
+                                'type': "warning",
+                                'showCancelButton': true,
+                                'confirmButtonClass': "btn-danger",
+                                'confirmButtonText': "Login!",
+                                'closeOnConfirm': false
                             }, function () {
                                 window.location.href = 'dashboard.php';
                             });

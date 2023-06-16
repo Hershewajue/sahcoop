@@ -19,7 +19,7 @@ try {
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
             $storedPswd = $row['pswd'];
             //echo "Record found in the database";
-            echo $storedPswd;
+            //echo $storedPswd;
 
             if ($pswd == $storedPswd) {
                 $fname = $row['fname'];

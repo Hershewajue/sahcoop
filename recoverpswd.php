@@ -43,102 +43,80 @@
         </nav>
     </div>
     <div class="container mt-5 text-center row justify-content-center mx-auto">
-        <div class="col-sm-4 ">
-            <img class="img-thumbnail" width="400" height="400" src="img/tracking.jpg" alt="Sahco Logo">
+        <div class="col-sm-4">
+            <img class="img-thumbnail" width="400" height="700" src="img/forgot-password.jpg" alt="Sahco Logo">
         </div>
-        <section>
-
-            <!-- content -->
-            <div class="">
-                <!-- Register form -->
-                <section class="register-form py-md-5 py-3">
-                    <div class="card card_border p-md-4">
-                        <div class="card-body">
-                            <!-- form -->
-                            <form action="#" method="GET">
-                                <div class="register__header text-left mb-4">
-                                    <h3 class="register__title mb-2"> Forgot Password</h3>
-                                    <p>Please enter the email address for your account. A verification code will be sent
-                                        to you.
-                                        Once you have received the verification code, you will be able to choose a new
-                                        password
-                                        for your account. </p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1" class="input__label">Email address</label>
-                                    <input type="email" class="form-control login_text_field_bg input-style"
-                                        id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                                </div>
-                                <button type="submit" class="btn btn-primary btn-style mt-2">Send Recovery
-                                    Password</button>
-                            </form>
-                            <!-- //form -->
-                            <p class="backtohome mt-4"><a href="index-2.html" class="back"><i class="fa fa-chevron-left"
-                                        aria-hidden="true"></i>Back to Home </a></p>
-                            </p>
-                        </div>
-                    </div>
-                </section>
-            </div>
-            <div class="container-fluid mt-5 p-4 bg-dark text-white row">
-                <div class="col-sm-6">
-                    <h3 class="display-6">Contact Us</h3>
-                    <p class="text-white-50"><i class="fa fa-map-marker"></i> Cargo Terminal, Murtala Mohammed
-                        International
-                        Airport,<br> Ikeja, Lagos. P.M.B 21768,</p>
-                    <p class="text-white-50"><i class="fa fa-phone"></i><a style="text-decoration: none;"
-                            href="tel:+234 701 253 5707"> +234 701 253 5707</a></p>
-                    <p class="text-white-50"><i class="fa fa-envelope"></i><a style="text-decoration: none;"
-                            href="mailto:amedujosepho@gmail.com"> amedujosepho@gmail.com</a></p>
+        <div class="col-sm-8 img-thumbnail">
+        <form method="post" action="tracking.php" class="needs-validated mx-auto">
+                <h1 class="display-6 mt-2 mb-4">Forgot password?</h1>
+                <p>Please enter the email address for your account. A verification code will be sent to you. Once you have received the verification code, you will be able to choose a new password for your account. </p>
+                <div class="input-group mb-3 mt-3">
+                    <span class="input-group-text">Email address:</span>
+                    <input type="email" class="form-control" id="email"
+                        placeholder="Enter the email address associated with your account" name="email" required>
                 </div>
-                <div class="col-sm-6 icon-bar">
-                    <h3 class="display-6">Our Socials</h3><br>
-                    <a href="#" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a>
-                    <a href="#" target="_blank" class="twitter"><i class="fa fa-twitter"></i></a>
-                    <a href="#" target="_blank" class="instagram"><i class="fa fa-instagram"></i></a>
-                    <a href="#" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a>
-                    <a href="#" target="_blank" class="youtube"><i class="fa fa-youtube"></i></a>
-                    <p class="text-white-50 mt-4">&copy; SAHCO Staff Multipurpose Cooperative Society 2023</p>
-                </div>
-            </div>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                <button type="submit" id="track" name="track" class="btn btn-primary col-sm-12">Send Recovery password</button>
+            </form>
+        </div>
+    </div>
+    <div class="container-fluid mt-5 p-4 bg-dark text-white row">
+        <div class="col-sm-6">
+            <h3 class="display-6">Contact Us</h3>
+            <p class="text-white-50"><i class="fa fa-map-marker"></i> Cargo Terminal, Murtala Mohammed International
+                Airport,<br> Ikeja, Lagos. P.M.B 21768,</p>
+            <p class="text-white-50"><i class="fa fa-phone"></i><a style="text-decoration: none;"
+                    href="tel:+234 701 253 5707"> +234 701 253 5707</a></p>
+            <p class="text-white-50"><i class="fa fa-envelope"></i><a style="text-decoration: none;"
+                    href="mailto:amedujosepho@gmail.com"> amedujosepho@gmail.com</a></p>
+        </div>
+        <div class="col-sm-6 icon-bar">
+            <h3 class="display-6">Our Socials</h3><br>
+            <a href="#" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a>
+            <a href="#" target="_blank" class="twitter"><i class="fa fa-twitter"></i></a>
+            <a href="#" target="_blank" class="instagram"><i class="fa fa-instagram"></i></a>
+            <a href="#" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            <a href="#" target="_blank" class="youtube"><i class="fa fa-youtube"></i></a>
+            <p class="text-white-50 mt-4">&copy; SAHCO Staff Multipurpose Cooperative Society 2023</p>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-            <script type="text/javascript">
-                $(function () {
-                    $('#track').click(function () {
+    <script type="text/javascript">
+        $(function () {
+            $('#track').click(function () {
 
-                        var valid = this.form.checkValidity();
-                        if (valid) {
-                            //e.preventDefault();
-                            //alert("true");
-                            swal.fire({
-                                'title': 'Hello User!',
-                                'text': 'Record was submitted successfully!',
-                                'type': 'success'
-                            })
-                        } else {
-                            //alert("false");
-                            swal.fire({
-                                'title': 'Hello User!',
-                                'text': 'There was some errors submitting your data',
-                                'type': 'success'
-                            })
-                        }
-
-                        var fname = $('#fname').val();
-                        var lname = $('#fname').val();
-
-
-                    })
+                var valid = this.form.checkValidity();
+                if (valid) {
+                    //e.preventDefault();
+                    //alert("true");
                     swal.fire({
                         'title': 'Hello User!',
-                        'text': 'Welcome to the our Application Tracking page',
+                        'text': 'Record was submitted successfully!',
                         'type': 'success'
-
                     })
-                });
-            </script>
+                } else {
+                    //alert("false");
+                    swal.fire({
+                        'title': 'Hello User!',
+                        'text': 'There was some errors submitting your data',
+                        'type': 'success'
+                    })
+                }
+
+                var fname = $('#fname').val();
+                var lname = $('#fname').val();
+
+
+            })
+            swal.fire({
+                'title': 'Hello User!',
+                'text': 'Welcome to the our Application Tracking page',
+                'type': 'success'
+
+            })
+        });
+    </script>
 </body>
 
 </html>

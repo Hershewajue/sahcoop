@@ -42,18 +42,20 @@ try {
             echo "Passwords do not match. Please try again.";
             exit;
         }
+        // Hash the password
+        $hashedPswd = password_hash($pswd, PASSWORD_DEFAULT);
 
         // Check if email exists in the database
         $stmtCheckEmail = $conn->prepare("SELECT COUNT(*) FROM registrations WHERE email = :email");
         $stmtCheckEmail->bindParam(':email', $email);
         $stmtCheckEmail->execute();
         $result = $stmtCheckEmail->fetchColumn();
-
+        
         if ($result > 0) {
             echo "Email already exists. Please try to login again or use the forgot password option.";
             exit;
         }
-
+        
         $sql = "INSERT INTO registrations (fname, lname, staffid, gender, mstatus, dob, addr, email, tel, position, appointmentdate, passport, bankname, contribution, sortcode, acctnum, branch, fnokname, fnokphone, fnokrel, fnokaddr, snokname, snokphone, snokrel, snokaddr, fgname, fgstaffid, sgname, sgstaffid, idcard, utilitybill, pswd) VALUES (:fname, :lname, :staffid, :gender, :mstatus, :dob, :addr, :email, :tel, :position, :appointmentdate, :passport, :bankname, :contribution, :sortcode, :acctnum, :branch, :fnokname, :fnokphone, :fnokrel, :fnokaddr, :snokname, :snokphone, :snokrel, :snokaddr, :fgname, :fgstaffid, :sgname, :sgstaffid, :idcard, :utilitybill, :pswd)";
 
         $stmtInsert = $conn->prepare($sql);

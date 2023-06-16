@@ -397,7 +397,7 @@ $conn = null;
     <script type="text/javascript">
         $(function () {
             $('#register').click(function (e) {
-                e.preventDefault();
+                //e.preventDefault();
 
                 var valid = validateForm();
                 if (valid) {

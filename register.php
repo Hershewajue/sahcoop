@@ -43,7 +43,7 @@ try {
             exit;
         }
 
-        // Check if email or staffid exists in the database
+        // Check if email exists in the database
         $stmtCheckEmail = $conn->prepare("SELECT COUNT(*) FROM registrations WHERE email = :email");
         $stmtCheckEmail->bindParam(':email', $email);
         $stmtCheckEmail->execute();

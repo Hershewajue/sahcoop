@@ -19,12 +19,13 @@ try {
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
             $storedPswd = $row['pswd'];
             echo "Record found in the database";
+            echo $storedPswd;
 
-            if (password_verify($pswd, $storedPswd)) {
+            if ($pswd == $storedPswd) {
                 $fname = $row['fname'];
                 echo "Welcome, $fname";
             } else {
-                echo "We couldn't verify your password.";
+                echo "Incorrect password.";
             }
         } else {
             echo "Record not found!";

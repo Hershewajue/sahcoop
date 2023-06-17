@@ -29,7 +29,7 @@ try {
             echo "Password sent to the user's email address.";
             */
         } else {
-            echo "Record not found!";
+            echo "<script>alert('Record not found!');</script>";
         }
     }
 } catch (PDOException $e) {
@@ -80,7 +80,7 @@ $conn = null;
     </div>
     <div class="container mt-5 text-center row justify-content-center mx-auto">
         <div class="col-sm-4">
-            <img class="img-thumbnail" width="400" height="700" src="img/forgot-password.jpg" alt="Sahco Logo">
+            <img class=" img-thumbnail h-100" width="400" height="100%" src="img/forgot-password.jpg" alt="Sahco Logo">
         </div>
         <div class="col-sm-8 img-thumbnail">
             <form method="post" action="recoverpswd.php" class="needs-validated mx-auto">

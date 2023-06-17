@@ -39,7 +39,7 @@ try {
 
         // Check for password mismatch
         if ($pswd !== $pswd2) {
-            echo "Passwords do not match. Please try again.";
+            echo "<script>alert('Passwords do not match. Please try again.');</script>";
             exit;
         }
         // Hash the password
@@ -52,7 +52,7 @@ try {
         $result = $stmtCheckEmail->fetchColumn();
 
         if ($result > 0) {
-            echo "Email already exists. Please try to login again or use the forgot password option.";
+            echo "<script>alert('Email already exists. Please try to login again or use the forgot password option.');</script>";
             exit;
         }
 
@@ -93,9 +93,9 @@ try {
         $stmtInsert->bindParam(':pswd', $pswd);
 
         if ($stmtInsert->execute()) {
-            echo "New record created successfully";
+            echo "<script>alert('New record created successfully.');</script>";
         } else {
-            echo "Failed to insert record into the database";
+            echo "<script>alert('Failed to insert record into the database.');</script>";
         }
     }
 } catch (PDOException $e) {

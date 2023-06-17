@@ -15,7 +15,7 @@ try {
         if ($stmt->rowCount() == 1) {
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
             $storedPswd = $row['pswd'];
-            echo "Your password is:  $storedPswd";
+            echo "<script>alert('Your password is:  $storedPswd');</script>";
             /*
             // Sending the password to the user's email address
             $to = $email;

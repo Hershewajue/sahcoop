@@ -1,4 +1,6 @@
 <?php
+session_start(); // Start the session
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -18,12 +20,16 @@ try {
         if ($stmt->rowCount() == 1) {
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
             $storedPswd = $row['pswd'];
-            //echo "Record found in the database";
-            //echo $storedPswd;
 
             if ($pswd == $storedPswd) {
                 $fname = $row['fname'];
-                echo "Welcome, $fname";
+
+                // Store user details in session variables
+                $_SESSION['fname'] = $fname;
+
+                // Redirect to dashboard.php
+                header("Location: dashboard.php");
+                exit();
             } else {
                 echo "Incorrect password.";
             }
@@ -36,6 +42,7 @@ try {
 }
 $conn = null;
 ?>
+
 
 
 
@@ -101,7 +108,8 @@ $conn = null;
                 <div class="form-floating row">
                     <div class="form-check mb-3 col-sm-3">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" name="remember" id="remember-checkbox"> Remember me
+                            <input class="form-check-input" type="checkbox" name="remember" id="remember-checkbox">
+                            Remember me
                         </label>
                     </div>
                     <div class="form-floating col-sm-4">
@@ -159,7 +167,7 @@ $conn = null;
             }
         }
 
-        window.onload = function() {
+        window.onload = function () {
             var rememberCheckbox = document.getElementById("remember-checkbox");
             var userInput = document.getElementById("user");
 

@@ -1,5 +1,5 @@
 <?php
-
+session_start(); // Start the session if it hasn't been started already
 
 
 ?>

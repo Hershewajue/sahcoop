@@ -1,12 +1,8 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
+session_start(); // Start the session if it hasn't been started already
+require_once 'connect.php'; // Include the connection code from connect.php
 
 try {
-    $conn = new PDO("mysql:host=$servername;dbname=sahcoop", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
     if (isset($_POST['recoverPswd'])) {
         $email = $_POST['email'];
         $staffid = $_POST['staffid'];

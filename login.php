@@ -1,14 +1,9 @@
 <?php
 session_start(); // Start the session
 
-$servername = "localhost";
-$username = "root";
-$password = "";
+require_once 'connect.php'; // Include the connection code from connect.php
 
 try {
-    $conn = new PDO("mysql:host=$servername;dbname=sahcoop", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
     if (isset($_POST['login'])) {
         $staffid = $_POST['staffid'];
         $pswd = $_POST['pswd'];
@@ -42,6 +37,7 @@ try {
 }
 $conn = null;
 ?>
+
 
 
 
@@ -167,7 +163,7 @@ $conn = null;
             }
         }
 
-        window.onload = function () {
+        window.onload = function ()  {
             var rememberCheckbox = document.getElementById("remember-checkbox");
             var userInput = document.getElementById("user");
 

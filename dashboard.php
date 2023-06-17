@@ -1,8 +1,8 @@
 <?php
-
-
+require_once('connect.php');
 
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -30,37 +30,28 @@
                 <li class="nav-item">
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php">Home</a>
+                    <a class="nav-link" href="dashboard.php">Overview</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">View</a>
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Reports</a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Link</a></li>
-                        <li><a class="dropdown-item" href="#">Another link</a></li>
-                        <li><a class="dropdown-item" href="#">A third link</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Loan tracking</a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Link</a></li>
-                        <li><a class="dropdown-item" href="#">Another link</a></li>
-                        <li><a class="dropdown-item" href="#">A third link</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Settings</a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Link</a></li>
-                        <li><a class="dropdown-item" href="#">Another link</a></li>
-                        <li><a class="dropdown-item" href="#">A third link</a></li>
+                        <li><a class="dropdown-item" href="savings.php">Savings</a></li>
+                        <li><a class="dropdown-item" href="shares.php">Shares</a></li>
+                        <li><a class="dropdown-item" href="coop-loans.php">Cooperative Loans</a></li>
+                        <li><a class="dropdown-item" href="e-loans.php">Electronic Loans</a></li>
+                        <li><a class="dropdown-item" href="commodity-loans.php">Commodity Loans</a></li>
+                        <li><a class="dropdown-item" href="emergency-loans.php">Emergency Loans</a></li>
+                        <li><a class="dropdown-item" href="other-loans.php">Other Loans</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="login.php">Logout</a>
+                    <a class="nav-link" href="loan-tracking.php">Loan tracking</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="logout.php">Logout</a>
                 </li>
             </ul>
-            <a class="navbar-brand ms-5" href="index.php">
+            <a class="navbar-brand ms-5" href="profile.php">
                 <img src="img/sahco coop logo.png" alt="Avatar Logo" style="width:40px;" class="rounded-pill">
             </a>
         </nav>

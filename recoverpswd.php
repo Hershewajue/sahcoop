@@ -34,10 +34,10 @@
                     <a class="nav-link" href="register.php">Membership Registration</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="tracking.php">Membership Tracking</a>
+                    <a class="nav-link" href="tracking.php">Membership Tracking</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="login.php">Membership Login</a>
+                    <a class="nav-link active" href="login.php">Membership Login</a>
                 </li>
             </ul>
         </nav>

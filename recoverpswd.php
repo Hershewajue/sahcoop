@@ -80,11 +80,16 @@ $conn = null;
                     have received the verification code, you will be able to choose a new password for your account.
                 </p>
                 <div class="input-group mb-3 mt-3">
+                    <span class="input-group-text">Staff ID:</span>
+                    <input type="text" class="form-control" id="staffid"
+                        placeholder="Enter your staff ID" name="staffid" required>
+                </div>
+                <div class="input-group mb-3 mt-3">
                     <span class="input-group-text">Email address:</span>
                     <input type="email" class="form-control" id="email"
                         placeholder="Enter the email address associated with your account" name="email" required>
                 </div>
-                <button type="submit" id="track" name="track" class="btn btn-primary col-sm-12">Send Recovery
+                <button type="submit" id="recoverPswd" name="recoverPswd" class="btn btn-primary col-sm-12">Send Recovery
                     password</button>
             </form>
         </div>

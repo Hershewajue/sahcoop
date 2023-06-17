@@ -6,8 +6,9 @@ if (isset($_SESSION['fname'])) {
     $fname = $_SESSION['fname'];
     echo "Welcome, $fname";
 } else {
-    // Redirect to login page if not logged in
-    header("Location: login.php");
+    // Session ended, display message and redirect
+    echo "Session ended. You have to login first.";
+    header("refresh:2; url=login.php"); // Redirect after 2 seconds
     exit();
 }
 ?>

@@ -21,10 +21,18 @@ try {
 
                 // Store user details in session variables
                 $_SESSION['fname'] = $fname;
-
-                // Redirect to dashboard.php
+                /*
+                // Check if the previous page is available
+                if (!empty($_SERVER['HTTP_REFERER'])) {
+                    // Redirect to the previous page
+                    header("Location: " . $_SERVER['HTTP_REFERER']);
+                    exit();
+                } else {
+                    */
+                // Redirect to a default page
                 header("Location: dashboard.php");
                 exit();
+                //}
             } else {
                 echo "<script>alert('Incorrect password.');</script>";
             }
@@ -37,6 +45,8 @@ try {
 }
 $conn = null;
 ?>
+
+
 
 
 
@@ -163,7 +173,7 @@ $conn = null;
             }
         }
 
-        window.onload = function ()  {
+        window.onload = fu nction ()   {
             var rememberCheckbox = document.getElementById("remember-checkbox");
             var userInput = document.getElementById("user");
 
@@ -173,7 +183,7 @@ $conn = null;
                 userInput.value = localStorage.getItem("rememberedUser");
                 rememberCheckbox.checked = true;
             }
-        };
+    };
     </script>
     <!--
     <script type="text/javascript">

@@ -25,13 +25,12 @@ try {
                 // Check if the previous page is available
                 if (!empty($_SERVER['HTTP_REFERER'])) {
                     // Redirect to the previous page
-                    header("Location: " . $_SERVER['HTTP_REFERER']);
+                    echo "<script>alert('Welcome, $fname'); window.location.href = '".$_SERVER['HTTP_REFERER']."';</script>";
                     exit();
-                } else {
-                    */
-                // Redirect to a default page
-                header("Location: dashboard.php");
-                exit();
+                } else { */
+                    // Redirect to a default page
+                    echo "<script>alert('Welcome, $fname'); window.location.href = 'dashboard.php';</script>";
+                    exit();
                 //}
             } else {
                 echo "<script>alert('Incorrect password.');</script>";
@@ -45,11 +44,6 @@ try {
 }
 $conn = null;
 ?>
-
-
-
-
-
 
 
 <!DOCTYPE html>

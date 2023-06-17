@@ -26,10 +26,10 @@ try {
                 header("Location: dashboard.php");
                 exit();
             } else {
-                echo "Incorrect password.";
+                echo "<script>alert('Incorrect password.');</script>";
             }
         } else {
-            echo "Record not found!";
+            echo "<script>alert('Record not found!');</script>";
         }
     }
 } catch (PDOException $e) {

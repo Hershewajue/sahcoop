@@ -68,20 +68,103 @@ if (isset($_SESSION['fname'])) {
         </nav>
     </div>
     <div class="container mt-5 text-center row justify-content-center mx-auto">
-        <div class="col-sm-4 ">
-            <img class="img-thumbnail" width="400" height="400" src="img/tracking.jpg" alt="Sahco Logo">
-        </div>
-        <div class="col-sm-8 img-thumbnail">
-            <form method="post" action="tracking.php" class="needs-validated mx-auto">
-                <h1 class="display-6 mt-4 mb-4">Application tracking</h1>
-                <div class="input-group mb-3 mt-3">
-                    <span class="input-group-text">Application number or Staff ID:</span>
-                    <input type="text" class="form-control" id="user"
-                        placeholder="Enter email or staff number (SAH-0000)" name="user" required>
+        <!-- people -->
+        <section class="people">
+            <section class="w3l-team-block">
+                <!-- //people cards style 1 -->
+                <div class="card card_border mb-5">
+                    <div class="cards__heading">
+                        <h3>People Cards -<span> Version 1</span></h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="teams mb-4">
+                            <div class="row px-2">
+                                <div class="col-lg-3 col-md-6 mb-lg-0 mb-4 px-2">
+                                    <div class="item">
+                                        <div class="d-team-grid team-info">
+                                            <div class="column">
+                                                <a href="team-single.html"><img src="assets/images/team.jpg" alt="" /></a>
+                                            </div>
+                                            <div class="team-member">
+                                                <h3 class="name-pos mb-0"><a href="team-single.html">Anthony</a></h3>
+                                                <p>Project Manager</p>
+                                                <div class="social">
+                                                    <a href="#facebook" class="team-facebook"><span class="fa fa-facebook"
+                                                            aria-hidden="true"></span></a>
+                                                    <a href="#twitter" class="team-twitter"><span class="fa fa-twitter" aria-hidden="true"></span></a>
+                                                    <a href="#instagram" class="team-instagram"><span class="fa fa-instagram"
+                                                            aria-hidden="true"></span></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6 mb-lg-0 mb-4 px-2">
+                                    <div class="item">
+                                        <div class="d-team-grid team-info">
+                                            <div class="column">
+                                                <a href="team-single.html"><img src="assets/images/team2.jpg" alt="" /></a>
+                                            </div>
+                                            <div class="team-member">
+                                                <h3 class="name-pos mb-0"><a href="team-single.html">Dennis Jack</a>
+                                                </h3>
+                                                <p>Team Lead</p>
+                                                <div class="social">
+                                                    <a href="#facebook" class="team-facebook"><span class="fa fa-facebook"
+                                                            aria-hidden="true"></span></a>
+                                                    <a href="#twitter" class="team-twitter"><span class="fa fa-twitter" aria-hidden="true"></span></a>
+                                                    <a href="#instagram" class="team-instagram"><span class="fa fa-instagram"
+                                                            aria-hidden="true"></span></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6 mb-lg-0 mb-4 px-2">
+                                    <div class="item">
+                                        <div class="d-team-grid team-info">
+                                            <div class="column">
+                                                <a href="team-single.html"><img src="assets/images/team3.jpg" alt="" /></a>
+                                            </div>
+                                            <div class="team-member">
+                                                <h3 class="name-pos mb-0"><a href="team-single.html">Harold</a></h3>
+                                                <p>Developer</p>
+                                                <div class="social">
+                                                    <a href="#facebook" class="team-facebook"><span class="fa fa-facebook"
+                                                            aria-hidden="true"></span></a>
+                                                    <a href="#twitter" class="team-twitter"><span class="fa fa-twitter" aria-hidden="true"></span></a>
+                                                    <a href="#instagram" class="team-instagram"><span class="fa fa-instagram"
+                                                            aria-hidden="true"></span></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6 mb-0 px-2">
+                                    <div class="item">
+                                        <div class="d-team-grid team-info">
+                                            <div class="column">
+                                                <a href="team-single.html"><img src="assets/images/team4.jpg" alt="" /></a>
+                                            </div>
+                                            <div class="team-member">
+                                                <h3 class="name-pos mb-0"><a href="team-single.html">Lawrence</a></h3>
+                                                <p>Designer</p>
+                                                <div class="social">
+                                                    <a href="#facebook" class="team-facebook"><span class="fa fa-facebook"
+                                                            aria-hidden="true"></span></a>
+                                                    <a href="#twitter" class="team-twitter"><span class="fa fa-twitter" aria-hidden="true"></span></a>
+                                                    <a href="#instagram" class="team-instagram"><span class="fa fa-instagram"
+                                                            aria-hidden="true"></span></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <button type="submit" id="track" name="track" class="btn btn-primary col-sm-12">Track</button>
-            </form>
-        </div>
+            </section>
     </div>
     <div class="container-fluid mt-5 p-4 bg-dark text-white row">
         <div class="col-sm-6">

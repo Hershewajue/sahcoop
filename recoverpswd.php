@@ -1,7 +1,34 @@
 <?php
+$servername = "localhost";
+$username = "root";
+$password = "";
 
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=sahcoop", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+    if (isset($_POST['recoverPswd'])) {
+        $email = $_POST['email'];
+        $staffid = $_POST['staffid'];
 
+        $stmt = $conn->prepare("SELECT pswd FROM registrations WHERE email = :email AND staffid = :staffid");
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':staffid', $staffid);
+        $stmt->execute();
+
+        if ($stmt->rowCount() == 1) {
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            $storedPswd = $row['password'];
+            echo "Record found in the database";
+            echo "Your password is: $storedPswd";
+        } else {
+            echo "Record not found!";
+        }
+    }
+} catch (PDOException $e) {
+    echo "Error: " . $e->getMessage();
+}
+$conn = null;
 ?>
 
 <!DOCTYPE html>
@@ -47,15 +74,18 @@
             <img class="img-thumbnail" width="400" height="700" src="img/forgot-password.jpg" alt="Sahco Logo">
         </div>
         <div class="col-sm-8 img-thumbnail">
-        <form method="post" action="tracking.php" class="needs-validated mx-auto">
+            <form method="post" action="tracking.php" class="needs-validated mx-auto">
                 <h1 class="display-6 mt-2 mb-4">Forgot password?</h1>
-                <p>Please enter the email address for your account. A verification code will be sent to you. Once you have received the verification code, you will be able to choose a new password for your account. </p>
+                <p>Please enter the email address for your account. A verification code will be sent to you. Once you
+                    have received the verification code, you will be able to choose a new password for your account.
+                </p>
                 <div class="input-group mb-3 mt-3">
                     <span class="input-group-text">Email address:</span>
                     <input type="email" class="form-control" id="email"
                         placeholder="Enter the email address associated with your account" name="email" required>
                 </div>
-                <button type="submit" id="track" name="track" class="btn btn-primary col-sm-12">Send Recovery password</button>
+                <button type="submit" id="track" name="track" class="btn btn-primary col-sm-12">Send Recovery
+                    password</button>
             </form>
         </div>
     </div>

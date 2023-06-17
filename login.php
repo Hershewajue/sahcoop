@@ -101,11 +101,12 @@ $conn = null;
                 <div class="form-floating row">
                     <div class="form-check mb-3 col-sm-3">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" name="remember"> Remember me
+                            <input class="form-check-input" type="checkbox" name="remember" id="remember-checkbox"> Remember me
                         </label>
                     </div>
                     <div class="form-floating col-sm-4">
-                        <p class="form-check-label text-black-50"><a style="text-decoration: none;" href="recoverpswd.php">Forgot
+                        <p class="form-check-label text-black-50"><a style="text-decoration: none;"
+                                href="recoverpswd.php">Forgot
                                 password?</a></p>
                     </div>
                     <div class="form-floating col-sm-5">
@@ -144,6 +145,33 @@ $conn = null;
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- Javascripts starts here -->
+    <script>
+        function rememberMeCheckbox() {
+            var rememberCheckbox = document.getElementById("remember-checkbox");
+            var userInput = document.getElementById("user");
+
+            if (rememberCheckbox.checked) {
+                // Store the email value in local storage
+                localStorage.setItem("rememberedUser", userInput.value);
+            } else {
+                // Remove the stored email from local storage
+                localStorage.removeItem("rememberedUser");
+            }
+        }
+
+        window.onload = function() {
+            var rememberCheckbox = document.getElementById("remember-checkbox");
+            var userInput = document.getElementById("user");
+
+            // Check if there is a stored email in local storage
+            if (localStorage.getItem("rememberedUser")) {
+                // Set the stored email in the email input field
+                userInput.value = localStorage.getItem("rememberedUser");
+                rememberCheckbox.checked = true;
+            }
+        };
+    </script>
+    <!--
     <script type="text/javascript">
         $(function () {
             $('#login').click(function (e) {
@@ -212,7 +240,7 @@ $conn = null;
             });
         });
     </script>
-
+    -->
 
 </body>
 

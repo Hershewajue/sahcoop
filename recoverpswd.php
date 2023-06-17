@@ -18,9 +18,20 @@ try {
 
         if ($stmt->rowCount() == 1) {
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
-            $storedPswd = $row['password'];
-            echo "Record found in the database";
-            echo "Your password is: $storedPswd";
+            $storedPswd = $row['pswd'];
+            echo "Your password is:  $storedPswd";
+            /*
+            // Sending the password to the user's email address
+            $to = $email;
+            $subject = "Password Retrieval";
+            $message = "Your password is: $storedPswd";
+            $headers = "From: amedujosepho@gmail.com";
+
+            ini_set('SMTP', 'smtp.gmail.com');
+            ini_set('smtp_port', '587');
+            mail($to, $subject, $message, $headers);
+            echo "Password sent to the user's email address.";
+            */
         } else {
             echo "Record not found!";
         }
@@ -28,7 +39,9 @@ try {
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
 }
+
 $conn = null;
+
 ?>
 
 <!DOCTYPE html>
@@ -74,22 +87,23 @@ $conn = null;
             <img class="img-thumbnail" width="400" height="700" src="img/forgot-password.jpg" alt="Sahco Logo">
         </div>
         <div class="col-sm-8 img-thumbnail">
-            <form method="post" action="tracking.php" class="needs-validated mx-auto">
+            <form method="post" action="recoverpswd.php" class="needs-validated mx-auto">
                 <h1 class="display-6 mt-2 mb-4">Forgot password?</h1>
                 <p>Please enter the email address for your account. A verification code will be sent to you. Once you
                     have received the verification code, you will be able to choose a new password for your account.
                 </p>
                 <div class="input-group mb-3 mt-3">
                     <span class="input-group-text">Staff ID:</span>
-                    <input type="text" class="form-control" id="staffid"
-                        placeholder="Enter your staff ID" name="staffid" required>
+                    <input type="text" class="form-control" id="staffid" placeholder="Enter your staff ID"
+                        name="staffid" required>
                 </div>
                 <div class="input-group mb-3 mt-3">
                     <span class="input-group-text">Email address:</span>
                     <input type="email" class="form-control" id="email"
                         placeholder="Enter the email address associated with your account" name="email" required>
                 </div>
-                <button type="submit" id="recoverPswd" name="recoverPswd" class="btn btn-primary col-sm-12">Send Recovery
+                <button type="submit" id="recoverPswd" name="recoverPswd" class="btn btn-primary col-sm-12">Send
+                    Recovery
                     password</button>
             </form>
         </div>
@@ -116,7 +130,7 @@ $conn = null;
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+    <!--
     <script type="text/javascript">
         $(function () {
             $('#track').click(function () {
@@ -152,6 +166,7 @@ $conn = null;
             })
         });
     </script>
+    -->
 </body>
 
 </html>

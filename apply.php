@@ -44,21 +44,21 @@ if (isset($_SESSION['fname'])) {
                     <a class="nav-link" href="dashboard.php">Overview</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">Reports</a>
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Reports</a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="savings.php">Savings</a></li>
                         <li><a class="dropdown-item" href="shares.php">Shares</a></li>
                         <li><a class="dropdown-item" href="coop-loans.php">Cooperative Loans</a></li>
                         <li><a class="dropdown-item" href="e-loans.php">Electronic Loans</a></li>
-                        <li><a class="dropdown-item active" href="commodity-loans.php">Commodity Loans</a></li>
+                        <li><a class="dropdown-item" href="commodity-loans.php">Commodity Loans</a></li>
                         <li><a class="dropdown-item" href="emergency-loans.php">Emergency Loans</a></li>
                         <li><a class="dropdown-item" href="other-loans.php">Other Loans</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Apply</a>
+                    <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">Apply</a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="apply.php">Apply for a loan</a></li>
+                        <li><a class="dropdown-item active" href="apply.php">Apply for a loan</a></li>
                         <li><a class="dropdown-item" href="buy.php">Buy a commodity</a></li>
                         <li><a class="dropdown-item" href="loan-tracking.php">Track loan status</a></li>
                     </ul>

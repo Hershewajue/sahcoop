@@ -48,7 +48,7 @@ try {
         pswd VARCHAR(255)
     )");
 
-    echo "Database and table created successfully.";
+    echo "<script>alert('Database and table created successfully.');<script>";
 } catch (PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
 }

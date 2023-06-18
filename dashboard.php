@@ -55,8 +55,13 @@ if (isset($_SESSION['fname'])) {
                         <li><a class="dropdown-item" href="other-loans.php">Other Loans</a></li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="loan-tracking.php">Loan tracking</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Apply</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="apply.php">Apply for a loan</a></li>
+                        <li><a class="dropdown-item" href="buy.php">Buy a commodity</a></li>
+                        <li><a class="dropdown-item" href="loan-tracking.php">Track loan status</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="logout.php">Logout</a>
@@ -68,7 +73,7 @@ if (isset($_SESSION['fname'])) {
         </nav>
     </div>
     <div class="container mt-5 text-center row justify-content-center mx-auto">
-        <h1 class="display-6 mt-4 mb-4">Application tracking</h1>
+        <h1 class="display-6 mt-4 mb-4">Dashboard</h1>
         <div class="card card_border mb-5">
             <div class="card-body">
                 <div class="row px-2">
@@ -79,9 +84,9 @@ if (isset($_SESSION['fname'])) {
                                     <a href="#url"><img class="rounded-circle" src="img/people1.jpg" alt=" "></a>
                                     <div class="right-team-9">
                                         <div>
-                                            <h5><a href="#url" class="card__title mb-2 mt-3">Alexander smith</a>
+                                            <h5><a href="savings.php" class="card__title mb-2 mt-3">Savings</a>
                                             </h5>
-                                            <p class="">Web designer</p>
+                                            <p class="">#50,000.00</p>
                                         </div>
                                     </div>
                                 </div>
@@ -95,9 +100,9 @@ if (isset($_SESSION['fname'])) {
                                     <a href="#url"><img class="rounded-circle" src="img/people2.jpg" alt=" "></a>
                                     <div class="right-team-9">
                                         <div>
-                                            <h5><a href="#url" class="card__title mb-2 mt-3">Elizabeth lisa</a>
+                                            <h5><a href="shares.php" class="card__title mb-2 mt-3">Shares</a>
                                             </h5>
-                                            <p class="">Web designer</p>
+                                            <p class="">#50,000.00</p>
                                         </div>
                                     </div>
                                 </div>
@@ -111,9 +116,9 @@ if (isset($_SESSION['fname'])) {
                                     <a href="#url"><img class="rounded-circle" src="img/people3.jpg" alt=" "></a>
                                     <div class="right-team-9">
                                         <div>
-                                            <h5><a href="#url" class="card__title mb-2 mt-3">Michael watson</a>
+                                            <h5><a href="coop-loans" class="card__title mb-2 mt-3">Corporative Loans</a>
                                             </h5>
-                                            <p class="">Web designer</p>
+                                            <p class="">#50,000.00</p>
                                         </div>
                                     </div>
                                 </div>
@@ -129,7 +134,7 @@ if (isset($_SESSION['fname'])) {
                                         <div>
                                             <h5><a href="#url" class="card__title mb-2 mt-3">Johnson Ker</a>
                                             </h5>
-                                            <p class="">Web designer</p>
+                                            <p class="">#50,000.00</p>
                                         </div>
                                     </div>
                                 </div>
@@ -149,7 +154,7 @@ if (isset($_SESSION['fname'])) {
                                         <div>
                                             <h5><a href="#url" class="card__title mb-2 mt-3">Alexander smith</a>
                                             </h5>
-                                            <p class="">Web designer</p>
+                                            <p class="">#50,000.00</p>
                                         </div>
                                     </div>
                                 </div>
@@ -165,7 +170,7 @@ if (isset($_SESSION['fname'])) {
                                         <div>
                                             <h5><a href="#url" class="card__title mb-2 mt-3">Elizabeth lisa</a>
                                             </h5>
-                                            <p class="">Web designer</p>
+                                            <p class="">#50,000.00</p>
                                         </div>
                                     </div>
                                 </div>
@@ -181,7 +186,7 @@ if (isset($_SESSION['fname'])) {
                                         <div>
                                             <h5><a href="#url" class="card__title mb-2 mt-3">Michael watson</a>
                                             </h5>
-                                            <p class="">Web designer</p>
+                                            <p class="">#50,000.00</p>
                                         </div>
                                     </div>
                                 </div>
@@ -197,7 +202,7 @@ if (isset($_SESSION['fname'])) {
                                         <div>
                                             <h5><a href="#url" class="card__title mb-2 mt-3">Johnson Ker</a>
                                             </h5>
-                                            <p class="">Web designer</p>
+                                            <p class="">#50,000.00</p>
                                         </div>
                                     </div>
                                 </div>

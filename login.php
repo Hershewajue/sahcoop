@@ -167,7 +167,7 @@ $conn = null;
             }
         }
 
-        window.onload = function()   {
+        window.onload = fu nction ()   {
             var rememberCheckbox = document.getElementById("remember-checkbox");
             var userInput = document.getElementById("user");
 

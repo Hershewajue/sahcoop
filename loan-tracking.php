@@ -55,8 +55,13 @@ if (isset($_SESSION['fname'])) {
                         <li><a class="dropdown-item" href="other-loans.php">Other Loans</a></li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="loan-tracking.php">Loan tracking</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Apply</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="apply.php">Apply for a loan</a></li>
+                        <li><a class="dropdown-item" href="buy.php">Buy a commodity</a></li>
+                        <li><a class="dropdown-item active" href="loan-tracking.php">Track loan status</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="logout.php">Logout</a>

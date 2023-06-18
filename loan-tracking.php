@@ -56,7 +56,7 @@ if (isset($_SESSION['fname'])) {
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Apply</a>
+                    <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">Apply</a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="apply.php">Apply for a loan</a></li>
                         <li><a class="dropdown-item" href="buy.php">Buy a commodity</a></li>

@@ -72,24 +72,23 @@ if (isset($_SESSION['fname'])) {
             </a>
         </nav>
     </div>
-    <div class="container mt-5 text-center row justify-content-center mx-auto">
+    <div class="container mt-5 text-left row justify-content-center mx-auto">
         <div class="col-sm-3 img-thumbnail mx-2">
-            <i class="fa fa-university mt-5 float-start"
-                style="font-size: 70px; color: #aaa; transition: 0.3s ease; opacity: 0.3;" aria-hidden="true"></i>
+        <i class="fa fa-university mt-5 float-start iconz" aria-hidden="true"></i>
             <div class="float-end">
                 <h1 class="display-6 mt-5">N90,000</h1>
                 <p class="float-end">Savings</p>
             </div>
         </div>
         <div class="col-sm-3 img-thumbnail mx-2">
-            <i class="fa-line-chart mt-5 float-start" style="font-size: 70px;" aria-hidden="true"></i>
+        <i class="fa fa-line-chart mt-5 float-start iconz" aria-hidden="true"></i>
             <div class="float-end">
                 <h1 class="display-6 mt-5">N90,000</h1>
                 <p class="float-end">Shares</p>
             </div>
         </div>
         <div class="col-sm-3 img-thumbnail mx-2">
-            <i class="fa fa-handshake-o mt-5 float-start" style="font-size: 70px;" aria-hidden="true"></i>
+            <i class="fa fa-handshake-o mt-5 float-start iconz" aria-hidden="true"></i>
             <div class="float-end">
                 <h1 class="display-6 mt-5">N90,000</h1>
                 <p class="float-end">Cooperative Loans</p>
@@ -98,21 +97,21 @@ if (isset($_SESSION['fname'])) {
     </div>
     <div class="container mt-5 text-center row justify-content-center mx-auto">
         <div class="col-sm-3 img-thumbnail mx-2">
-            <i class="fa fa-university mt-5 float-start" style="font-size: 70px;" aria-hidden="true"></i>
+            <i class="fa fa-laptop mt-5 float-start iconz" aria-hidden="true"></i>
             <div class="float-end">
                 <h1 class="display-6 mt-5">N90,000</h1>
                 <p class="float-end">Electronic Loans</p>
             </div>
         </div>
         <div class="col-sm-3 img-thumbnail mx-2">
-            <i class="fa fa-university mt-5 float-start" style="font-size: 70px;" aria-hidden="true"></i>
+            <i class="fa fa-university mt-5 float-start iconz" aria-hidden="true"></i>
             <div class="float-end">
                 <h1 class="display-6 mt-5">N90,000</h1>
                 <p class="float-end">Commodity Loans</p>
             </div>
         </div>
         <div class="col-sm-3 img-thumbnail mx-2">
-            <i class="fa fa-university mt-5 float-start" style="font-size: 70px;" aria-hidden="true"></i>
+            <i class="fa fa-university mt-5 float-start iconz" aria-hidden="true"></i>
             <div class="float-end">
                 <h1 class="display-6 mt-5">N90,000</h1>
                 <p class="float-end">Emergency Loans</p>
@@ -121,26 +120,13 @@ if (isset($_SESSION['fname'])) {
     </div>
     <div class="container mt-5 text-center row justify-content-center mx-auto">
         <div class="col-sm-3 img-thumbnail mx-2">
-            <i class="fa fa-university mt-5 float-start" style="font-size: 70px;" aria-hidden="true"></i>
+            <i class="fa fa-university mt-5 float-start iconz" aria-hidden="true"></i>
             <div class="float-end">
                 <h1 class="display-6 mt-5">N90,000</h1>
                 <p class="float-end">Other Loans</p>
             </div>
         </div>
-        <div class="col-sm-3 img-thumbnail mx-2">
-            <i class="fa fa-university mt-5 float-start" style="font-size: 70px;" aria-hidden="true"></i>
-            <div class="float-end">
-                <h1 class="display-6 mt-5">N90,000</h1>
-                <p class="float-end">Savings</p>
-            </div>
-        </div>
-        <div class="col-sm-3 img-thumbnail mx-2">
-            <i class="fa fa-university mt-5 float-start" style="font-size: 70px;" aria-hidden="true"></i>
-            <div class="float-end">
-                <h1 class="display-6 mt-5">N90,000</h1>
-                <p class="float-end">Savings</p>
-            </div>
-        </div>
+        
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

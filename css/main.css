@@ -48,8 +48,16 @@ nav ul li .active {
     background: #bb0000;
     color: white;
   }
-  .iconz{
+  .col-sm-3.img-thumbnail.mx-2:hover i.iconz {
     color: #aaa;
     transition: 0.3s ease;
-    opacity: 0.3;
+    opacity: 0.5;
+  }
+  
+  .col-sm-3.img-thumbnail.mx-2:hover i.iconz {
+    color: #aaa;
+  }
+  
+  .col-sm-3.img-thumbnail.mx-2 i.iconz {
+    font-size: 70px;
   }

@@ -72,7 +72,7 @@ if (isset($_SESSION['fname'])) {
             </a>
         </nav>
     </div>
-    <div class="container mt-5 text-left row justify-content-center mx-auto">
+    <div class="container mt-5 text-center row justify-content-center mx-auto">
         <div class="col-sm-3 img-thumbnail mx-2">
         <i class="fa fa-university mt-5 float-start iconz" aria-hidden="true"></i>
             <div class="float-end">
@@ -100,18 +100,18 @@ if (isset($_SESSION['fname'])) {
             <i class="fa fa-laptop mt-5 float-start iconz" aria-hidden="true"></i>
             <div class="float-end">
                 <h1 class="display-6 mt-5">N90,000</h1>
-                <p class="float-end">Electronic Loans</p>
+                <p class="float-end">Electronics Loans</p>
             </div>
         </div>
         <div class="col-sm-3 img-thumbnail mx-2">
-            <i class="fa fa-university mt-5 float-start iconz" aria-hidden="true"></i>
+            <i class="fa fa-shopping-cart mt-5 float-start iconz" aria-hidden="true"></i>
             <div class="float-end">
                 <h1 class="display-6 mt-5">N90,000</h1>
                 <p class="float-end">Commodity Loans</p>
             </div>
         </div>
         <div class="col-sm-3 img-thumbnail mx-2">
-            <i class="fa fa-university mt-5 float-start iconz" aria-hidden="true"></i>
+            <i class="fa fa-exclamation-triangle mt-5 float-start iconz" aria-hidden="true"></i>
             <div class="float-end">
                 <h1 class="display-6 mt-5">N90,000</h1>
                 <p class="float-end">Emergency Loans</p>
@@ -127,6 +127,26 @@ if (isset($_SESSION['fname'])) {
             </div>
         </div>
         
+    </div>
+    <div class="container-fluid mt-5 p-4 bg-dark text-white row">
+        <div class="col-sm-6">
+            <h3 class="display-6">Contact Us</h3>
+            <p class="text-white-50"><i class="fa fa-map-marker"></i> Cargo Terminal, Murtala Mohammed International
+                Airport,<br> Ikeja, Lagos. P.M.B 21768,</p>
+            <p class="text-white-50"><i class="fa fa-phone"></i><a style="text-decoration: none;"
+                    href="tel:+234 701 253 5707"> +234 701 253 5707</a></p>
+            <p class="text-white-50"><i class="fa fa-envelope"></i><a style="text-decoration: none;"
+                    href="mailto:amedujosepho@gmail.com"> amedujosepho@gmail.com</a></p>
+        </div>
+        <div class="col-sm-6 icon-bar">
+            <h3 class="display-6">Our Socials</h3><br>
+            <a href="#" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a>
+            <a href="#" target="_blank" class="twitter"><i class="fa fa-twitter"></i></a>
+            <a href="#" target="_blank" class="instagram"><i class="fa fa-instagram"></i></a>
+            <a href="#" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            <a href="#" target="_blank" class="youtube"><i class="fa fa-youtube"></i></a>
+            <p class="text-white-50 mt-4">&copy; SAHCO Staff Multipurpose Cooperative Society 2023</p>
+        </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

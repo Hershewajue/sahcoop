@@ -68,7 +68,7 @@ if (isset($_SESSION['fname'])) {
                 </li>
             </ul>
             <a class="navbar-brand ms-5 active" href="profile.php">
-                <img src="img/sahco coop logo.png" alt="Avatar Logo" style="width:40px;" class="rounded-pill">
+                <i class="fa fa-user-circle" style="font-size: 30px;" aria-hidden="true"></i>
             </a>
         </nav>
     </div>
@@ -88,17 +88,19 @@ if (isset($_SESSION['fname'])) {
                                     <div class="item">
                                         <div class="d-team-grid team-info">
                                             <div class="column">
-                                                <a href="team-single.html"><img src="assets/images/team.jpg" alt="" /></a>
+                                                <a href="team-single.html"><img src="assets/images/team.jpg"
+                                                        alt="" /></a>
                                             </div>
                                             <div class="team-member">
                                                 <h3 class="name-pos mb-0"><a href="team-single.html">Anthony</a></h3>
                                                 <p>Project Manager</p>
                                                 <div class="social">
-                                                    <a href="#facebook" class="team-facebook"><span class="fa fa-facebook"
+                                                    <a href="#facebook" class="team-facebook"><span
+                                                            class="fa fa-facebook" aria-hidden="true"></span></a>
+                                                    <a href="#twitter" class="team-twitter"><span class="fa fa-twitter"
                                                             aria-hidden="true"></span></a>
-                                                    <a href="#twitter" class="team-twitter"><span class="fa fa-twitter" aria-hidden="true"></span></a>
-                                                    <a href="#instagram" class="team-instagram"><span class="fa fa-instagram"
-                                                            aria-hidden="true"></span></a>
+                                                    <a href="#instagram" class="team-instagram"><span
+                                                            class="fa fa-instagram" aria-hidden="true"></span></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -108,18 +110,20 @@ if (isset($_SESSION['fname'])) {
                                     <div class="item">
                                         <div class="d-team-grid team-info">
                                             <div class="column">
-                                                <a href="team-single.html"><img src="assets/images/team2.jpg" alt="" /></a>
+                                                <a href="team-single.html"><img src="assets/images/team2.jpg"
+                                                        alt="" /></a>
                                             </div>
                                             <div class="team-member">
                                                 <h3 class="name-pos mb-0"><a href="team-single.html">Dennis Jack</a>
                                                 </h3>
                                                 <p>Team Lead</p>
                                                 <div class="social">
-                                                    <a href="#facebook" class="team-facebook"><span class="fa fa-facebook"
+                                                    <a href="#facebook" class="team-facebook"><span
+                                                            class="fa fa-facebook" aria-hidden="true"></span></a>
+                                                    <a href="#twitter" class="team-twitter"><span class="fa fa-twitter"
                                                             aria-hidden="true"></span></a>
-                                                    <a href="#twitter" class="team-twitter"><span class="fa fa-twitter" aria-hidden="true"></span></a>
-                                                    <a href="#instagram" class="team-instagram"><span class="fa fa-instagram"
-                                                            aria-hidden="true"></span></a>
+                                                    <a href="#instagram" class="team-instagram"><span
+                                                            class="fa fa-instagram" aria-hidden="true"></span></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -129,17 +133,19 @@ if (isset($_SESSION['fname'])) {
                                     <div class="item">
                                         <div class="d-team-grid team-info">
                                             <div class="column">
-                                                <a href="team-single.html"><img src="assets/images/team3.jpg" alt="" /></a>
+                                                <a href="team-single.html"><img src="assets/images/team3.jpg"
+                                                        alt="" /></a>
                                             </div>
                                             <div class="team-member">
                                                 <h3 class="name-pos mb-0"><a href="team-single.html">Harold</a></h3>
                                                 <p>Developer</p>
                                                 <div class="social">
-                                                    <a href="#facebook" class="team-facebook"><span class="fa fa-facebook"
+                                                    <a href="#facebook" class="team-facebook"><span
+                                                            class="fa fa-facebook" aria-hidden="true"></span></a>
+                                                    <a href="#twitter" class="team-twitter"><span class="fa fa-twitter"
                                                             aria-hidden="true"></span></a>
-                                                    <a href="#twitter" class="team-twitter"><span class="fa fa-twitter" aria-hidden="true"></span></a>
-                                                    <a href="#instagram" class="team-instagram"><span class="fa fa-instagram"
-                                                            aria-hidden="true"></span></a>
+                                                    <a href="#instagram" class="team-instagram"><span
+                                                            class="fa fa-instagram" aria-hidden="true"></span></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -149,17 +155,19 @@ if (isset($_SESSION['fname'])) {
                                     <div class="item">
                                         <div class="d-team-grid team-info">
                                             <div class="column">
-                                                <a href="team-single.html"><img src="assets/images/team4.jpg" alt="" /></a>
+                                                <a href="team-single.html"><img src="assets/images/team4.jpg"
+                                                        alt="" /></a>
                                             </div>
                                             <div class="team-member">
                                                 <h3 class="name-pos mb-0"><a href="team-single.html">Lawrence</a></h3>
                                                 <p>Designer</p>
                                                 <div class="social">
-                                                    <a href="#facebook" class="team-facebook"><span class="fa fa-facebook"
+                                                    <a href="#facebook" class="team-facebook"><span
+                                                            class="fa fa-facebook" aria-hidden="true"></span></a>
+                                                    <a href="#twitter" class="team-twitter"><span class="fa fa-twitter"
                                                             aria-hidden="true"></span></a>
-                                                    <a href="#twitter" class="team-twitter"><span class="fa fa-twitter" aria-hidden="true"></span></a>
-                                                    <a href="#instagram" class="team-instagram"><span class="fa fa-instagram"
-                                                            aria-hidden="true"></span></a>
+                                                    <a href="#instagram" class="team-instagram"><span
+                                                            class="fa fa-instagram" aria-hidden="true"></span></a>
                                                 </div>
                                             </div>
                                         </div>

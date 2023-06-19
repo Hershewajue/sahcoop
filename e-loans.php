@@ -44,7 +44,8 @@ if (isset($_SESSION['fname'])) {
                     <a class="nav-link" href="dashboard.php">Overview</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">Reports</a>
+                    <a class="nav-link dropdown-toggle active" href="#" role="button"
+                        data-bs-toggle="dropdown">Reports</a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="savings.php">Savings</a></li>
                         <li><a class="dropdown-item" href="shares.php">Shares</a></li>
@@ -68,7 +69,7 @@ if (isset($_SESSION['fname'])) {
                 </li>
             </ul>
             <a class="navbar-brand ms-5" href="profile.php">
-                <img src="img/sahco coop logo.png" alt="Avatar Logo" style="width:40px;" class="rounded-pill">
+                <i class="fa fa-user-circle" style="font-size: 30px;" aria-hidden="true"></i>
             </a>
         </nav>
     </div>

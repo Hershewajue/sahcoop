@@ -68,11 +68,11 @@ if (isset($_SESSION['fname'])) {
                 </li>
             </ul>
             <a class="navbar-brand ms-5" href="profile.php">
-                <img src="img/sahco coop logo.png" alt="Avatar Logo" style="width:40px;" class="rounded-pill">
+                <i class="fa fa-user-circle" style="font-size: 30px;" aria-hidden="true"></i>
             </a>
         </nav>
     </div>
-    <div class="container img-thumbnail mt-2 p-2">
+    <div class="container img-thumbnail mt-5 p-2">
         <div class="container text-center row justify-content-center mx-auto">
             <h1 class="display-6 mb-2">Overview</h1>
             <div class="col-sm-3 img-thumbnail mx-2">
@@ -144,7 +144,7 @@ if (isset($_SESSION['fname'])) {
             </div>
         </div>
     </div>
-    <div class="container-fluid mt-2 p-4 bg-dark text-white row">
+    <div class="container-fluid mt-5 p-4 bg-dark text-white row">
         <div class="col-sm-6">
             <h3 class="display-6">Contact Us</h3>
             <p class="text-white-50"><i class="fa fa-map-marker"></i> Cargo Terminal, Murtala Mohammed International

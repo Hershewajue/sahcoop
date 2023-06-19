@@ -1,5 +1,6 @@
 <?php
 session_start(); // Start the session if it hasn't been started already
+
 require_once 'connect.php'; // Include the connection code from connect.php
 
 try {
@@ -98,9 +99,7 @@ $conn = null;
                     <input type="email" class="form-control" id="email"
                         placeholder="Enter the email address associated with your account" name="email" required>
                 </div>
-                <button type="submit" id="recoverPswd" name="recoverPswd" class="btn btn-primary col-sm-12">Send
-                    Recovery
-                    password</button>
+                <button type="submit" id="recoverPswd" name="recoverPswd" class="btn btn-primary col-sm-12">Send recovery password</button>
             </form>
         </div>
     </div>

@@ -73,164 +73,73 @@ if (isset($_SESSION['fname'])) {
         </nav>
     </div>
     <div class="container mt-5 text-center row justify-content-center mx-auto">
-        <h1 class="display-6 mt-4 mb-4">Dashboard</h1>
-        <div class="card card_border mb-5">
-            <div class="card-body">
-                <div class="row px-2">
-                    <div class="col-lg-3 col-md-6 mb-4 px-2">
-                        <div class="card text-center card_border py-2">
-                            <div class="card-body">
-                                <div class="team-main-19">
-                                    <a href="#url"><img class="rounded-circle" src="img/people1.jpg" alt=" "></a>
-                                    <div class="right-team-9">
-                                        <div>
-                                            <h5><a href="savings.php" class="card__title mb-2 mt-3">Savings</a>
-                                            </h5>
-                                            <p class="">#50,000.00</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4 px-2">
-                        <div class="card text-center card_border py-2">
-                            <div class="card-body">
-                                <div class="team-main-19">
-                                    <a href="#url"><img class="rounded-circle" src="img/people2.jpg" alt=" "></a>
-                                    <div class="right-team-9">
-                                        <div>
-                                            <h5><a href="shares.php" class="card__title mb-2 mt-3">Shares</a>
-                                            </h5>
-                                            <p class="">#50,000.00</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4 px-2">
-                        <div class="card text-center card_border py-2">
-                            <div class="card-body">
-                                <div class="team-main-19">
-                                    <a href="#url"><img class="rounded-circle" src="img/people3.jpg" alt=" "></a>
-                                    <div class="right-team-9">
-                                        <div>
-                                            <h5><a href="coop-loans" class="card__title mb-2 mt-3">Corporative Loans</a>
-                                            </h5>
-                                            <p class="">#50,000.00</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4 px-2">
-                        <div class="card text-center card_border py-2">
-                            <div class="card-body">
-                                <div class="team-main-19">
-                                    <a href="#url"><img class="rounded-circle" src="img/people4.jpg" alt=" "></a>
-                                    <div class="right-team-9">
-                                        <div>
-                                            <h5><a href="#url" class="card__title mb-2 mt-3">Johnson Ker</a>
-                                            </h5>
-                                            <p class="">#50,000.00</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="col-sm-3 img-thumbnail mx-2">
+            <i class="fa fa-university mt-5 float-start"
+                style="font-size: 70px; color: #aaa; transition: 0.3s ease; opacity: 0.3;" aria-hidden="true"></i>
+            <div class="float-end">
+                <h1 class="display-6 mt-5">N90,000</h1>
+                <p class="float-end">Savings</p>
             </div>
-            <div class="card-body">
-                <div class="row px-2">
-                    <div class="col-lg-3 col-md-6 mb-4 px-2">
-                        <div class="card text-center card_border py-2">
-                            <div class="card-body">
-                                <div class="team-main-19">
-                                    <a href="#url"><img class="rounded-circle" src="img/people1.jpg" alt=" "></a>
-                                    <div class="right-team-9">
-                                        <div>
-                                            <h5><a href="#url" class="card__title mb-2 mt-3">Alexander smith</a>
-                                            </h5>
-                                            <p class="">#50,000.00</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4 px-2">
-                        <div class="card text-center card_border py-2">
-                            <div class="card-body">
-                                <div class="team-main-19">
-                                    <a href="#url"><img class="rounded-circle" src="img/people2.jpg" alt=" "></a>
-                                    <div class="right-team-9">
-                                        <div>
-                                            <h5><a href="#url" class="card__title mb-2 mt-3">Elizabeth lisa</a>
-                                            </h5>
-                                            <p class="">#50,000.00</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4 px-2">
-                        <div class="card text-center card_border py-2">
-                            <div class="card-body">
-                                <div class="team-main-19">
-                                    <a href="#url"><img class="rounded-circle" src="img/people3.jpg" alt=" "></a>
-                                    <div class="right-team-9">
-                                        <div>
-                                            <h5><a href="#url" class="card__title mb-2 mt-3">Michael watson</a>
-                                            </h5>
-                                            <p class="">#50,000.00</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4 px-2">
-                        <div class="card text-center card_border py-2">
-                            <div class="card-body">
-                                <div class="team-main-19">
-                                    <a href="#url"><img class="rounded-circle" src="img/people4.jpg" alt=" "></a>
-                                    <div class="right-team-9">
-                                        <div>
-                                            <h5><a href="#url" class="card__title mb-2 mt-3">Johnson Ker</a>
-                                            </h5>
-                                            <p class="">#50,000.00</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        </div>
+        <div class="col-sm-3 img-thumbnail mx-2">
+            <i class="fa-line-chart mt-5 float-start" style="font-size: 70px;" aria-hidden="true"></i>
+            <div class="float-end">
+                <h1 class="display-6 mt-5">N90,000</h1>
+                <p class="float-end">Shares</p>
+            </div>
+        </div>
+        <div class="col-sm-3 img-thumbnail mx-2">
+            <i class="fa fa-handshake-o mt-5 float-start" style="font-size: 70px;" aria-hidden="true"></i>
+            <div class="float-end">
+                <h1 class="display-6 mt-5">N90,000</h1>
+                <p class="float-end">Cooperative Loans</p>
             </div>
         </div>
     </div>
-    <div class="container-fluid mt-5 p-4 bg-dark text-white row">
-        <div class="col-sm-6">
-            <h3 class="display-6">Contact Us</h3>
-            <p class="text-white-50"><i class="fa fa-map-marker"></i> Cargo Terminal, Murtala Mohammed International
-                Airport,<br> Ikeja, Lagos. P.M.B 21768,</p>
-            <p class="text-white-50"><i class="fa fa-phone"></i><a style="text-decoration: none;"
-                    href="tel:+234 701 253 5707"> +234 701 253 5707</a></p>
-            <p class="text-white-50"><i class="fa fa-envelope"></i><a style="text-decoration: none;"
-                    href="mailto:amedujosepho@gmail.com"> amedujosepho@gmail.com</a></p>
+    <div class="container mt-5 text-center row justify-content-center mx-auto">
+        <div class="col-sm-3 img-thumbnail mx-2">
+            <i class="fa fa-university mt-5 float-start" style="font-size: 70px;" aria-hidden="true"></i>
+            <div class="float-end">
+                <h1 class="display-6 mt-5">N90,000</h1>
+                <p class="float-end">Electronic Loans</p>
+            </div>
         </div>
-        <div class="col-sm-6 icon-bar">
-            <h3 class="display-6">Our Socials</h3><br>
-            <a href="#" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a>
-            <a href="#" target="_blank" class="twitter"><i class="fa fa-twitter"></i></a>
-            <a href="#" target="_blank" class="instagram"><i class="fa fa-instagram"></i></a>
-            <a href="#" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a>
-            <a href="#" target="_blank" class="youtube"><i class="fa fa-youtube"></i></a>
-            <p class="text-white-50 mt-4">&copy; SAHCO Staff Multipurpose Cooperative Society 2023</p>
+        <div class="col-sm-3 img-thumbnail mx-2">
+            <i class="fa fa-university mt-5 float-start" style="font-size: 70px;" aria-hidden="true"></i>
+            <div class="float-end">
+                <h1 class="display-6 mt-5">N90,000</h1>
+                <p class="float-end">Commodity Loans</p>
+            </div>
+        </div>
+        <div class="col-sm-3 img-thumbnail mx-2">
+            <i class="fa fa-university mt-5 float-start" style="font-size: 70px;" aria-hidden="true"></i>
+            <div class="float-end">
+                <h1 class="display-6 mt-5">N90,000</h1>
+                <p class="float-end">Emergency Loans</p>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5 text-center row justify-content-center mx-auto">
+        <div class="col-sm-3 img-thumbnail mx-2">
+            <i class="fa fa-university mt-5 float-start" style="font-size: 70px;" aria-hidden="true"></i>
+            <div class="float-end">
+                <h1 class="display-6 mt-5">N90,000</h1>
+                <p class="float-end">Other Loans</p>
+            </div>
+        </div>
+        <div class="col-sm-3 img-thumbnail mx-2">
+            <i class="fa fa-university mt-5 float-start" style="font-size: 70px;" aria-hidden="true"></i>
+            <div class="float-end">
+                <h1 class="display-6 mt-5">N90,000</h1>
+                <p class="float-end">Savings</p>
+            </div>
+        </div>
+        <div class="col-sm-3 img-thumbnail mx-2">
+            <i class="fa fa-university mt-5 float-start" style="font-size: 70px;" aria-hidden="true"></i>
+            <div class="float-end">
+                <h1 class="display-6 mt-5">N90,000</h1>
+                <p class="float-end">Savings</p>
+            </div>
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>

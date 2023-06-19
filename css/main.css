@@ -48,3 +48,8 @@ nav ul li .active {
     background: #bb0000;
     color: white;
   }
+  .iconz{
+    color: #aaa;
+    transition: 0.3s ease;
+    opacity: 0.3;
+  }

@@ -2,8 +2,8 @@
 session_start(); // Start the session if it hasn't been started already
 
 // Check if the user is logged in
-if (isset($_SESSION['fname'])) {
-    $fname = $_SESSION['fname'];
+if (isset($_SESSION['staffid'])) {
+    $staffid = $_SESSION['staffid'];
     //echo "<script>alert('Welcome, $fname');</script>";
 } else {
     // Session ended, display message and redirect
@@ -11,9 +11,6 @@ if (isset($_SESSION['fname'])) {
     exit();
 }
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html>
@@ -72,112 +69,217 @@ if (isset($_SESSION['fname'])) {
             </a>
         </nav>
     </div>
-    <div class="container mt-5 text-center row justify-content-center mx-auto">
-        <!-- people -->
-        <section class="people">
-            <section class="w3l-team-block">
-                <!-- //people cards style 1 -->
-                <div class="card card_border mb-5">
-                    <div class="cards__heading">
-                        <h3>People Cards -<span> Version 1</span></h3>
+    <div class="container img-thumbnail mt-5 p-2">
+        <div class="container text-center row justify-content-center mx-auto">
+            <div class="col-sm-3 img-thumbnail mx-2">
+                <img alt="Profile Photo" src="img/team.jpg" class="img rounded" style="width: 300px; height: 400px; ">
+                <div class="input-group col mt-3">
+                    <span class="input-group-text">Update profile photo:</span>
+                    <input type="file" class="form-control" id="idcard" name="idcard">
+                </div>
+            </div>
+            <div class="col-sm-8 img-thumbnail mx-2">
+                <h1 class="display-6 mb-2">Profile details</h1>
+                <fieldset class="form-group img-thumbnail p-2 mt-3">
+                    <legend class="w-auto px-2">Personal Data</legend>
+                    <?php
+                    $stmt = $conn->prepare("SELECT * FROM registrations WHERE id = :staffid");
+                    $stmt->bindParam(':staffid', $staffid);
+                    $stmt->execute();
+
+                    if ($stmt->rowCount() > 0) {
+                        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                        // Display the user's profile information
+                        echo "<p>Welcome, " . $_SESSION['fname'] . "!</p>";
+
+                        echo "<h3>Personal Information:</h3>";
+                        echo "<p>First Name: " . $row['fname'] . "</p>";
+                        echo "<p>Last Name: " . $row['lname'] . "</p>";
+                        // Display more user information fields as needed
+                    
+                        echo "<h3>Contact Information:</h3>";
+                        echo "<p>Email: " . $row['email'] . "</p>";
+                        echo "<p>Telephone: " . $row['tel'] . "</p>";
+                        // Display more contact information fields as needed
+                    
+                        // You can continue displaying other captured user information
+                    
+                    } else {
+                        echo "<p>User profile not found.</p>";
+                    }
+                    ?>
+                    <div class="mt-3 input-group">
+                        <span class="input-group-text">Names:</span>
+                        <input type="text" id="fname" class="form-control" placeholder="First name" name="fname"
+                            disabled>
+                        <input type="text" id="lname" class="form-control" placeholder="Last name" name="lname"
+                            disabled>
                     </div>
-                    <div class="card-body">
-                        <div class="teams mb-4">
-                            <div class="row px-2">
-                                <div class="col-lg-3 col-md-6 mb-lg-0 mb-4 px-2">
-                                    <div class="item">
-                                        <div class="d-team-grid team-info">
-                                            <div class="column">
-                                                <a href="team-single.html"><img src="assets/images/team.jpg"
-                                                        alt="" /></a>
-                                            </div>
-                                            <div class="team-member">
-                                                <h3 class="name-pos mb-0"><a href="team-single.html">Anthony</a></h3>
-                                                <p>Project Manager</p>
-                                                <div class="social">
-                                                    <a href="#facebook" class="team-facebook"><span
-                                                            class="fa fa-facebook" aria-hidden="true"></span></a>
-                                                    <a href="#twitter" class="team-twitter"><span class="fa fa-twitter"
-                                                            aria-hidden="true"></span></a>
-                                                    <a href="#instagram" class="team-instagram"><span
-                                                            class="fa fa-instagram" aria-hidden="true"></span></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 mb-lg-0 mb-4 px-2">
-                                    <div class="item">
-                                        <div class="d-team-grid team-info">
-                                            <div class="column">
-                                                <a href="team-single.html"><img src="assets/images/team2.jpg"
-                                                        alt="" /></a>
-                                            </div>
-                                            <div class="team-member">
-                                                <h3 class="name-pos mb-0"><a href="team-single.html">Dennis Jack</a>
-                                                </h3>
-                                                <p>Team Lead</p>
-                                                <div class="social">
-                                                    <a href="#facebook" class="team-facebook"><span
-                                                            class="fa fa-facebook" aria-hidden="true"></span></a>
-                                                    <a href="#twitter" class="team-twitter"><span class="fa fa-twitter"
-                                                            aria-hidden="true"></span></a>
-                                                    <a href="#instagram" class="team-instagram"><span
-                                                            class="fa fa-instagram" aria-hidden="true"></span></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 mb-lg-0 mb-4 px-2">
-                                    <div class="item">
-                                        <div class="d-team-grid team-info">
-                                            <div class="column">
-                                                <a href="team-single.html"><img src="assets/images/team3.jpg"
-                                                        alt="" /></a>
-                                            </div>
-                                            <div class="team-member">
-                                                <h3 class="name-pos mb-0"><a href="team-single.html">Harold</a></h3>
-                                                <p>Developer</p>
-                                                <div class="social">
-                                                    <a href="#facebook" class="team-facebook"><span
-                                                            class="fa fa-facebook" aria-hidden="true"></span></a>
-                                                    <a href="#twitter" class="team-twitter"><span class="fa fa-twitter"
-                                                            aria-hidden="true"></span></a>
-                                                    <a href="#instagram" class="team-instagram"><span
-                                                            class="fa fa-instagram" aria-hidden="true"></span></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 mb-0 px-2">
-                                    <div class="item">
-                                        <div class="d-team-grid team-info">
-                                            <div class="column">
-                                                <a href="team-single.html"><img src="assets/images/team4.jpg"
-                                                        alt="" /></a>
-                                            </div>
-                                            <div class="team-member">
-                                                <h3 class="name-pos mb-0"><a href="team-single.html">Lawrence</a></h3>
-                                                <p>Designer</p>
-                                                <div class="social">
-                                                    <a href="#facebook" class="team-facebook"><span
-                                                            class="fa fa-facebook" aria-hidden="true"></span></a>
-                                                    <a href="#twitter" class="team-twitter"><span class="fa fa-twitter"
-                                                            aria-hidden="true"></span></a>
-                                                    <a href="#instagram" class="team-instagram"><span
-                                                            class="fa fa-instagram" aria-hidden="true"></span></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="row">
+                        <div class="input-group col mt-3">
+                            <span class="input-group-text">Staff ID:</span>
+                            <input type="text" class="form-control " id="staffid" placeholder="SAH-****" name="staffid"
+                                disabled>
+                        </div>
+                        <div class="input-group col mt-3">
+                            <span class="input-group-text">Gender:</span>
+                            <select class="form-select" id="gender" name="gender" disabled>
+                            </select>
                         </div>
                     </div>
-                </div>
-            </section>
+                    <div class="row">
+                        <div class="input-group col mt-3">
+                            <span class="input-group-text">Marital status:</span>
+                            <select class="form-select" id="mstatus" name="mstatus">
+                                <option readonly>Select one option</option>
+                                <option>Single</option>
+                                <option>Married</option>
+                                <option>Divorced</option>
+                                <option>Widow</option>
+                                <option>Widower</option>
+                            </select>
+                        </div>
+                        <div class="input-group col mt-3">
+                            <span class="input-group-text">Date of birth:</span>
+                            <input type="date" class="form-control" id="dob" placeholder="Enter date of birth"
+                                name="dob" disabled>
+                        </div>
+                    </div>
+                    <div class="input-group mt-3">
+                        <span class="input-group-text">Contact address:</span>
+                        <input type="" class="form-control" id="addr" placeholder="Enter the current contact address"
+                            name="addr">
+                    </div>
+                    <div class="input-group mt-3">
+                        <span class="input-group-text">Email address:</span>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Your Email">
+                        <span class="input-group-text">@example.com</span>
+                    </div>
+                    <div class="row">
+                        <div class="input-group col mt-3">
+                            <span class="input-group-text">Phone number:</span>
+                            <input type="tel" class="form-control" id="tel" placeholder="+2347011234567" name="tel">
+                        </div>
+                        <div class="input-group col mt-3">
+                            <span class="input-group-text">Designation:</span>
+                            <input type="text" class="form-control" id="position"
+                                placeholder="Enter your current designation" name="position" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-group col mt-3">
+                            <span class="input-group-text">Date of appointment:</span>
+                            <input type="date" class="form-control" id="appointmentdate" name="appointmentdate"
+                                disabled>
+                        </div>
+                        <div class="input-group col mt-3">
+                            <span class="input-group-text">Monthly contribution:</span>
+                            <input type="number" class="form-control" placeholder="Enter monthly contribution amount"
+                                id="contribution" name="contribution" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-group col mt-3">
+                            <span class="input-group-text">Bank name:</span>
+                            <input type="text" class="form-control" id="bankname" placeholder="Enter the bank name"
+                                name="bankname" disabled>
+                        </div>
+                        <div class="input-group col mt-3">
+                            <span class="input-group-text">Account number:</span>
+                            <input type="number" class="form-control" id="acctnum"
+                                placeholder="Enter your account number" name="acctnum" disabled>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="form-group img-thumbnail p-2 mt-3">
+                    <legend class="w-auto px-2">Details Of First Next Of Kin</legend>
+                    <div class="row">
+                        <div class="input-group col mt-3">
+                            <span class="input-group-text">Name:</span>
+                            <input type="text" class="form-control" id="fnokname" name="fnokname" required>
+                        </div>
+                        <div class="input-group col mt-3">
+                            <span class="input-group-text">Phone number:</span>
+                            <input type="tel" class="form-control" id="fnokphone" name="fnokphone" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-group col mt-3">
+                            <span class="input-group-text">Relationship:</span>
+                            <select class="form-select" id="fnokrel" name="fnokrel">
+                                <option>Brother</option>
+                                <option>Sister</option>
+                                <option>Father</option>
+                                <option>Mother</option>
+                                <option>Son</option>
+                                <option>Daughter</option>
+                                <option>Spouse</option>
+                                <option>Others</option>
+                            </select>
+                        </div>
+                        <div class="input-group col mt-3">
+                            <span class="input-group-text">Address:</span>
+                            <input type="text" class="form-control" id="fnokaddr" name="fnokaddr" required>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="form-group img-thumbnail p-2 mt-3">
+                    <legend class="w-auto px-2">Details of Second Next of Kin</legend>
+                    <div class="row">
+                        <div class="input-group col mt-3">
+                            <span class="input-group-text">Name:</span>
+                            <input type="text" class="form-control" id="snokname" name="snokname" required>
+                        </div>
+                        <div class="input-group col mt-3">
+                            <span class="input-group-text">Phone number:</span>
+                            <input type="tel" class="form-control" id="snokphone" name="snokphone" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-group col mt-3">
+                            <span class="input-group-text">Relationship:</span>
+                            <select class="form-select" id="snokrel" name="snokrel">
+                                <option>Brother</option>
+                                <option>Sister</option>
+                                <option>Father</option>
+                                <option>Mother</option>
+                                <option>Son</option>
+                                <option>Daughter</option>
+                                <option>Spouse</option>
+                                <option>Others</option>
+                            </select>
+                        </div>
+                        <div class="input-group col mt-3">
+                            <span class="input-group-text">Address:</span>
+                            <input type="text" class="form-control" id="snokaddr" name="snokaddr" required>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="form-group img-thumbnail p-2 mt-3">
+                    <legend class="w-auto px-2">Guarantors' Details</legend>
+                    <div class="row">
+                        <div class="input-group col mt-3">
+                            <span class="input-group-text">First Guarantor's Name:</span>
+                            <input type="text" class="form-control" id="fgname" name="fgname" required>
+                        </div>
+                        <div class="input-group col mt-3">
+                            <span class="input-group-text">First Guarantor's staff No:</span>
+                            <input type="text" class="form-control" id="fgstaffid" name="fgstaffid" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-group col mt-3">
+                            <span class="input-group-text">Second Guarantor's Name:</span>
+                            <input type="text" class="form-control" id="sgname" name="sgname" required>
+                        </div>
+                        <div class="input-group col mt-3">
+                            <span class="input-group-text">Second Guarantor's staff No:</span>
+                            <input type="text" class="form-control" id="sgstaffid" name="sgstaffid" required>
+                        </div>
+                    </div>
+            </div>
+        </div>
     </div>
     <div class="container-fluid mt-5 p-4 bg-dark text-white row">
         <div class="col-sm-6">

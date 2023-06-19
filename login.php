@@ -18,9 +18,10 @@ try {
 
             if ($pswd == $storedPswd) {
                 $fname = $row['fname'];
+                $staffid = $row['staffid'];
 
                 // Store user details in session variables
-                $_SESSION['fname'] = $fname;
+                $_SESSION['staffid'] = $staffid;
                 /*
                 // Check if the previous page is available
                 if (!empty($_SERVER['HTTP_REFERER'])) {

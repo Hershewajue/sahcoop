@@ -45,10 +45,8 @@ try {
 $conn = null;
 ?>
 
-
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -65,7 +63,6 @@ $conn = null;
 </head>
 
 <body>
-
     <!-- Navigations -->
     <div class="container-fluid">
         <a href="index.php"><img src="img/coop logo.png" class="mx-auto d-block rounded img-fluid" alt="Coop logo"></a>
@@ -149,7 +146,7 @@ $conn = null;
             <p class="text-white-50 mt-4">&copy; SAHCO Staff Multipurpose Cooperative Society 2023</p>
         </div>
     </div>
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 

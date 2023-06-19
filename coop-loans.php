@@ -73,22 +73,93 @@ if (isset($_SESSION['fname'])) {
             </a>
         </nav>
     </div>
-    <div class="container mt-5 text-center row justify-content-center mx-auto">
-        <div class="col-sm-4 ">
-            <img class="img-thumbnail" width="400" height="400" src="img/tracking.jpg" alt="Sahco Logo">
-        </div>
-        <div class="col-sm-8 img-thumbnail">
-            <form method="post" action="tracking.php" class="needs-validated mx-auto">
-                <h1 class="display-6 mt-4 mb-4">Application tracking</h1>
-                <div class="input-group mb-3 mt-3">
-                    <span class="input-group-text">Application number or Staff ID:</span>
-                    <input type="text" class="form-control" id="user"
-                        placeholder="Enter email or staff number (SAH-0000)" name="user" required>
+    <div class="container img-thumbnail mt-2 p-2">
+        <div class="container text-center row justify-content-center mx-auto">
+            <form method="post" action="savings.php" class="needs-validated mx-auto">
+                <h1 class="display-6 mt-4 mb-4">Cooperative Loans History</h1>
+                <div class="row">
+                    <div class="input-group col mb-3 mt-3">
+                        <span class="input-group-text">From:</span>
+                        <input type="date" class="form-control" id="dateFrom" name="dateFrom" required>
+                    </div>
+                    <div class="input-group col mb-3 mt-3">
+                        <span class="input-group-text">To:</span>
+                        <input type="date" class="form-control" id="dateTo" name="dateTo" required>
+                    </div>
+                    <div class="input-group col mb-3 mt-3">
+                        <button class="btn btn-success" type="submit" id="search" name="search"><i
+                                class="fa fa-search my-auto iconz" aria-hidden="true"
+                                style="font-size: 30px"></i></button>
+                    </div>
                 </div>
-                <button type="submit" id="track" name="track" class="btn btn-primary col-sm-12">Track</button>
+                <div class="row">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Transaction Date</th>
+                                <th scope="col">Staff Name</th>
+                                <th scope="col">Staff Number</th>
+                                <th scope="col">Loan Type</th>
+                                <th scope="col">Loan Granted (₦)</th>
+                                <th scope="col">Loan Repayment (₦)</th>
+                                <th scope="col">Balance (₦)</th>
+                                <th scope="col">Remarks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </form>
+
         </div>
     </div>
+
     <div class="container-fluid mt-5 p-4 bg-dark text-white row">
         <div class="col-sm-6">
             <h3 class="display-6">Contact Us</h3>

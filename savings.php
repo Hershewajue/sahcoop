@@ -69,7 +69,7 @@ if (isset($_SESSION['fname'])) {
                 </li>
             </ul>
             <a class="navbar-brand ms-5" href="profile.php">
-            <i class="fa fa-user-circle" style="font-size: 30px;" aria-hidden="true"></i>
+                <i class="fa fa-user-circle" style="font-size: 30px;" aria-hidden="true"></i>
             </a>
         </nav>
     </div>
@@ -87,8 +87,68 @@ if (isset($_SESSION['fname'])) {
                         <input type="date" class="form-control" id="dateTo" name="dateTo" required>
                     </div>
                     <div class="input-group col mb-3 mt-3">
-                    <button class="btn btn-success" type="submit" id="search" name="search"><i class="fa fa-search my-auto iconz" aria-hidden="true" style="font-size: 30px" ></i></button>
+                        <button class="btn btn-success" type="submit" id="search" name="search"><i
+                                class="fa fa-search my-auto iconz" aria-hidden="true"
+                                style="font-size: 30px"></i></button>
                     </div>
+                </div>
+                <div class="row">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Transaction Date</th>
+                                <th scope="col">Staff Name</th>
+                                <th scope="col">Staff Number</th>
+                                <th scope="col">Deposit (₦)</th>
+                                <th scope="col">Withdrawal (₦)</th>
+                                <th scope="col">Balance (₦)</th>
+                                <th scope="col">Remarks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                                <td>@twitter</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </form>
 

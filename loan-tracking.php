@@ -78,12 +78,18 @@ if (isset($_SESSION['fname'])) {
             <img class="img-thumbnail" width="400" height="400" src="img/tracking.jpg" alt="Sahco Logo">
         </div>
         <div class="col-sm-8 img-thumbnail">
-            <form method="post" action="tracking.php" class="needs-validated mx-auto">
-                <h1 class="display-6 mt-4 mb-4">Application tracking</h1>
+            <form method="post" action="loan-tracking.php" class="needs-validated mx-auto">
+                <h1 class="display-6 mt-4 mb-4">Loan tracking</h1>
                 <div class="input-group mb-3 mt-3">
-                    <span class="input-group-text">Application number or Staff ID:</span>
-                    <input type="text" class="form-control" id="user"
-                        placeholder="Enter email or staff number (SAH-0000)" name="user" required>
+                    <span class="input-group-text">Loan type:</span>
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option selected>Select the loan type</option>
+                        <option value="1">Cooperative loan</option>
+                        <option value="2">Emergency loan</option>
+                        <option value="3">Electronic loan</option>
+                        <option value="4">Commodity loan</option>
+                        <option value="5">Other loan</option>
+                    </select>
                 </div>
                 <button type="submit" id="track" name="track" class="btn btn-primary col-sm-12">Track</button>
             </form>

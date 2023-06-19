@@ -79,7 +79,7 @@ if (isset($_SESSION['fname'])) {
                 <a class="nav-link" href="savings.php">
                     <i class="fa fa-university mt-2 float-start iconz text-success" aria-hidden="true"></i>
                     <div class="float-end">
-                        <h1 class="mt-2">N90,000</h1>
+                        <h1 class="mt-2">₦90,000</h1>
                         <p class="float-end text-muted">Savings</p>
                     </div>
                 </a>
@@ -88,7 +88,7 @@ if (isset($_SESSION['fname'])) {
                 <a class="nav-link" href="shares.php">
                     <i class="fa fa-line-chart mt-2 float-start iconz text-primary" aria-hidden="true"></i>
                     <div class="float-end">
-                        <h1 class="mt-2">N90,000</h1>
+                        <h1 class="mt-2">₦90,000</h1>
                         <p class="float-end text-muted">Shares</p>
                     </div>
                 </a>
@@ -97,7 +97,7 @@ if (isset($_SESSION['fname'])) {
                 <a class="nav-link" href="coop-loans.php">
                     <i class="fa fa-handshake-o mt-2 float-start iconz text-warning" aria-hidden="true"></i>
                     <div class="float-end">
-                        <h1 class="mt-2">N90,000</h1>
+                        <h1 class="mt-2">₦90,000</h1>
                         <p class="float-end text-muted">Cooperative Loans</p>
                     </div>
             </div>
@@ -108,7 +108,7 @@ if (isset($_SESSION['fname'])) {
                 <a class="nav-link" href="e-loans.php">
                     <i class="fa fa-laptop mt-2 float-start iconz text-info" aria-hidden="true"></i>
                     <div class="float-end">
-                        <h1 class="mt-2">N90,000</h1>
+                        <h1 class="mt-2">₦90,000</h1>
                         <p class="float-end text-muted">Electronics Loans</p>
                     </div>
                 </a>
@@ -117,7 +117,7 @@ if (isset($_SESSION['fname'])) {
                 <a class="nav-link" href="commodity-loans.php">
                     <i class="fa fa-shopping-cart mt-2 float-start iconz text-success" aria-hidden="true"></i>
                     <div class="float-end">
-                        <h1 class="mt-2">N90,000</h1>
+                        <h1 class="mt-2">₦90,000</h1>
                         <p class="float-end text-muted">Commodity Loans</p>
                     </div>
                 </a>
@@ -126,7 +126,7 @@ if (isset($_SESSION['fname'])) {
                 <a class="nav-link" href="emergency-loans.php">
                     <i class="fa fa-exclamation-triangle mt-2 float-start iconz text-danger" aria-hidden="true"></i>
                     <div class="float-end">
-                        <h1 class="mt-2">N90,000</h1>
+                        <h1 class="mt-2">₦90,000</h1>
                         <p class="float-end text-muted">Emergency Loans</p>
                     </div>
                 </a>
@@ -137,7 +137,7 @@ if (isset($_SESSION['fname'])) {
                 <a class="nav-link" href="other-loans.php">
                     <i class="fa fa-question mt-2 float-start iconz text-danger" aria-hidden="true"></i>
                     <div class="float-end">
-                        <h1 class="mt-2">N90,000</h1>
+                        <h1 class="mt-2">₦90,000</h1>
                         <p class="float-end text-muted">Other Loans</p>
                     </div>
                 </a>

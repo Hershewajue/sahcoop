@@ -72,79 +72,79 @@ if (isset($_SESSION['fname'])) {
             </a>
         </nav>
     </div>
-    <div class="container img-thumbnail mt-5 p-5">
+    <div class="container img-thumbnail mt-2 p-2">
         <div class="container text-center row justify-content-center mx-auto">
-            <h1 class="display-6 mb-5">Overview</h1>
+            <h1 class="display-6 mb-2">Overview</h1>
             <div class="col-sm-3 img-thumbnail mx-2">
-                <a href="savings.php">
-                    <i class="fa fa-university mt-5 float-start iconz text-success" aria-hidden="true"></i>
+                <a class="nav-link" href="savings.php">
+                    <i class="fa fa-university mt-2 float-start iconz text-success" aria-hidden="true"></i>
                     <div class="float-end">
-                        <h1 class="mt-5">N90,000</h1>
+                        <h1 class="mt-2">N90,000</h1>
                         <p class="float-end text-muted">Savings</p>
                     </div>
                 </a>
             </div>
             <div class="col-sm-3 img-thumbnail mx-2">
-                <a href="shares.php">
-                    <i class="fa fa-line-chart mt-5 float-start iconz text-primary" aria-hidden="true"></i>
+                <a class="nav-link" href="shares.php">
+                    <i class="fa fa-line-chart mt-2 float-start iconz text-primary" aria-hidden="true"></i>
                     <div class="float-end">
-                        <h1 class="mt-5">N90,000</h1>
+                        <h1 class="mt-2">N90,000</h1>
                         <p class="float-end text-muted">Shares</p>
                     </div>
                 </a>
             </div>
             <div class="col-sm-3 img-thumbnail mx-2">
-                <a href="coop-loans.php">
-                    <i class="fa fa-handshake-o mt-5 float-start iconz text-warning" aria-hidden="true"></i>
+                <a class="nav-link" href="coop-loans.php">
+                    <i class="fa fa-handshake-o mt-2 float-start iconz text-warning" aria-hidden="true"></i>
                     <div class="float-end">
-                        <h1 class="mt-5">N90,000</h1>
+                        <h1 class="mt-2">N90,000</h1>
                         <p class="float-end text-muted">Cooperative Loans</p>
                     </div>
             </div>
             </a>
         </div>
-        <div class="container mt-5 text-center row justify-content-center mx-auto">
+        <div class="container mt-2 text-center row justify-content-center mx-auto">
             <div class="col-sm-3 img-thumbnail mx-2">
-                <a href="e-loans.php">
-                    <i class="fa fa-laptop mt-5 float-start iconz text-info" aria-hidden="true"></i>
+                <a class="nav-link" href="e-loans.php">
+                    <i class="fa fa-laptop mt-2 float-start iconz text-info" aria-hidden="true"></i>
                     <div class="float-end">
-                        <h1 class="mt-5">N90,000</h1>
+                        <h1 class="mt-2">N90,000</h1>
                         <p class="float-end text-muted">Electronics Loans</p>
                     </div>
                 </a>
             </div>
             <div class="col-sm-3 img-thumbnail mx-2">
-                <a href="commodity-loans.php">
-                    <i class="fa fa-shopping-cart mt-5 float-start iconz text-success" aria-hidden="true"></i>
+                <a class="nav-link" href="commodity-loans.php">
+                    <i class="fa fa-shopping-cart mt-2 float-start iconz text-success" aria-hidden="true"></i>
                     <div class="float-end">
-                        <h1 class="mt-5">N90,000</h1>
+                        <h1 class="mt-2">N90,000</h1>
                         <p class="float-end text-muted">Commodity Loans</p>
                     </div>
                 </a>
             </div>
             <div class="col-sm-3 img-thumbnail mx-2">
-                <a href="emergency-loans.php">
-                    <i class="fa fa-exclamation-triangle mt-5 float-start iconz text-danger" aria-hidden="true"></i>
+                <a class="nav-link" href="emergency-loans.php">
+                    <i class="fa fa-exclamation-triangle mt-2 float-start iconz text-danger" aria-hidden="true"></i>
                     <div class="float-end">
-                        <h1 class="mt-5">N90,000</h1>
+                        <h1 class="mt-2">N90,000</h1>
                         <p class="float-end text-muted">Emergency Loans</p>
                     </div>
                 </a>
             </div>
         </div>
-        <div class="container mt-5 text-center row justify-content-center mx-auto">
+        <div class="container mt-2 text-center row justify-content-center mx-auto">
             <div class="col-sm-3 img-thumbnail mx-2">
-                <a href="other-loans.php">
-                    <i class="fa fa-question mt-5 float-start iconz text-danger" aria-hidden="true"></i>
+                <a class="nav-link" href="other-loans.php">
+                    <i class="fa fa-question mt-2 float-start iconz text-danger" aria-hidden="true"></i>
                     <div class="float-end">
-                        <h1 class="mt-5">N90,000</h1>
+                        <h1 class="mt-2">N90,000</h1>
                         <p class="float-end text-muted">Other Loans</p>
                     </div>
                 </a>
             </div>
         </div>
     </div>
-    <div class="container-fluid mt-5 p-4 bg-dark text-white row">
+    <div class="container-fluid mt-2 p-4 bg-dark text-white row">
         <div class="col-sm-6">
             <h3 class="display-6">Contact Us</h3>
             <p class="text-white-50"><i class="fa fa-map-marker"></i> Cargo Terminal, Murtala Mohammed International

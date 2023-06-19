@@ -28,9 +28,9 @@ try {
                     echo "<script>alert('Welcome, $fname'); window.location.href = '".$_SERVER['HTTP_REFERER']."';</script>";
                     exit();
                 } else { */
-                    // Redirect to a default page
-                    echo "<script>alert('Welcome, $fname'); window.location.href = 'dashboard.php';</script>";
-                    exit();
+                // Redirect to a default page
+                echo "<script>alert('Welcome, $fname'); window.location.href = 'dashboard.php';</script>";
+                exit();
                 //}
             } else {
                 echo "<script>alert('Incorrect password.');</script>";
@@ -149,6 +149,7 @@ $conn = null;
             <p class="text-white-50 mt-4">&copy; SAHCO Staff Multipurpose Cooperative Society 2023</p>
         </div>
     </div>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -167,7 +168,7 @@ $conn = null;
             }
         }
 
-        window.onload = function()   {
+        window.onload = function () {
             var rememberCheckbox = document.getElementById("remember-checkbox");
             var userInput = document.getElementById("user");
 
@@ -177,7 +178,7 @@ $conn = null;
                 userInput.value = localStorage.getItem("rememberedUser");
                 rememberCheckbox.checked = true;
             }
-    };
+        };
     </script>
     <!--
     <script type="text/javascript">

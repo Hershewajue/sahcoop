@@ -74,44 +74,97 @@ if (isset($_SESSION['fname'])) {
         </nav>
     </div>
     <div class="container mt-5 text-center row justify-content-center mx-auto">
-        <div class="col-sm-4 ">
-            <img class="img-thumbnail" width="400" height="400" src="img/tracking.jpg" alt="Sahco Logo">
-        </div>
-        <div class="col-sm-8 img-thumbnail">
-            <form method="post" action="tracking.php" class="needs-validated mx-auto">
-                <h1 class="display-6 mt-4 mb-4">Application tracking</h1>
-                <div class="input-group mb-3 mt-3">
-                    <span class="input-group-text">Application number or Staff ID:</span>
-                    <input type="text" class="form-control" id="user"
-                        placeholder="Enter email or staff number (SAH-0000)" name="user" required>
-                </div>
-                <button type="submit" id="track" name="track" class="btn btn-primary col-sm-12">Track</button>
+        <div class="col-sm-12 img-thumbnail" style="background-color:lightgrey">
+            <form method="post" action="apply.php" class="needs-validated">
+                <h1 class="display-6">Loan Application Form</h1>
+                <fieldset class="form-group img-thumbnail p-2 mt-3">
+                    <div class="row">
+                        <div class="input-group col mt-3">
+                            <span class="input-group-text">Loan type:</span>
+                            <select class="form-select" id="loan-type" name="loan-type">
+                                <option selected>Select the loan type</option>
+                                <option value="1">Cooperative loan</option>
+                                <option value="2">Emergency loan</option>
+                                <option value="3">Electronic loan</option>
+                                <option value="4">Commodity loan</option>
+                                <option value="5">Other loan</option>
+                            </select>
+                        </div>
+                        <div class="input-group col mt-3">
+                            <span class="input-group-text">Period of payment:</span>
+                            <input type="text" class="form-control" id="duration"
+                                placeholder="Between 3 - 20 months" name="duration" required>
+                        </div>
+                        <div class="input-group col mt-3">
+                            <span class="input-group-text">Amount:</span>
+                            <input type="number" class="form-control" id="amount" placeholder="Enter the amount here"
+                                name="amount" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-group col mt-3">
+                            <span class="input-group-text">First Guarantor's Name:</span>
+                            <input type="text" class="form-control" id="fgname" name="fgname" required>
+                        </div>
+                        <div class="input-group col mt-3">
+                            <span class="input-group-text">First Guarantor's staff No:</span>
+                            <input type="text" class="form-control" id="fgstaffid" name="fgstaffid" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-group col mt-3">
+                            <span class="input-group-text">Second Guarantor's Name:</span>
+                            <input type="text" class="form-control" id="sgname" name="sgname" required>
+                        </div>
+                        <div class="input-group col mt-3">
+                            <span class="input-group-text">Second Guarantor's staff No:</span>
+                            <input type="text" class="form-control" id="sgstaffid" name="sgstaffid" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-group col mt-3">
+                            <span class="input-group-text">Phone number:</span>
+                            <input type="tel" class="form-control" id="tel" placeholder="+2347011234567" name="tel"
+                                required>
+                        </div>
+                        <div class="input-group col mt-3">
+                            <span class="input-group-text">Payslip:</span>
+                            <input type="file" class="form-control" id="payslip" name="payslip" required>
+                        </div>
+                        <div class="input-group col mt-3">
+                            <span class="input-group-text">Confirm your password:</span>
+                            <input type="password" class="form-control" id="pswd" name="pswd" required>
+                        </div>
+                    </div>
+                </fieldset>
+                <button type="submit" name="register" class="btn btn-success col-sm-12 mt-3 mb-3"
+                    id="register">Register</button>
             </form>
         </div>
     </div>
-    <div class="container-fluid mt-5 p-4 bg-dark text-white row">
-        <div class="col-sm-6">
-            <h3 class="display-6">Contact Us</h3>
-            <p class="text-white-50"><i class="fa fa-map-marker"></i> Cargo Terminal, Murtala Mohammed International
-                Airport,<br> Ikeja, Lagos. P.M.B 21768,</p>
-            <p class="text-white-50"><i class="fa fa-phone"></i><a style="text-decoration: none;"
-                    href="tel:+234 701 253 5707"> +234 701 253 5707</a></p>
-            <p class="text-white-50"><i class="fa fa-envelope"></i><a style="text-decoration: none;"
-                    href="mailto:amedujosepho@gmail.com"> amedujosepho@gmail.com</a></p>
+        <div class="container-fluid mt-5 p-4 bg-dark text-white row">
+            <div class="col-sm-6">
+                <h3 class="display-6">Contact Us</h3>
+                <p class="text-white-50"><i class="fa fa-map-marker"></i> Cargo Terminal, Murtala Mohammed International
+                    Airport,<br> Ikeja, Lagos. P.M.B 21768,</p>
+                <p class="text-white-50"><i class="fa fa-phone"></i><a style="text-decoration: none;"
+                        href="tel:+234 701 253 5707"> +234 701 253 5707</a></p>
+                <p class="text-white-50"><i class="fa fa-envelope"></i><a style="text-decoration: none;"
+                        href="mailto:amedujosepho@gmail.com"> amedujosepho@gmail.com</a></p>
+            </div>
+            <div class="col-sm-6 icon-bar">
+                <h3 class="display-6">Our Socials</h3><br>
+                <a href="#" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a>
+                <a href="#" target="_blank" class="twitter"><i class="fa fa-twitter"></i></a>
+                <a href="#" target="_blank" class="instagram"><i class="fa fa-instagram"></i></a>
+                <a href="#" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                <a href="#" target="_blank" class="youtube"><i class="fa fa-youtube"></i></a>
+                <p class="text-white-50 mt-4">&copy; SAHCO Staff Multipurpose Cooperative Society 2023</p>
+            </div>
         </div>
-        <div class="col-sm-6 icon-bar">
-            <h3 class="display-6">Our Socials</h3><br>
-            <a href="#" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a>
-            <a href="#" target="_blank" class="twitter"><i class="fa fa-twitter"></i></a>
-            <a href="#" target="_blank" class="instagram"><i class="fa fa-instagram"></i></a>
-            <a href="#" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a>
-            <a href="#" target="_blank" class="youtube"><i class="fa fa-youtube"></i></a>
-            <p class="text-white-50 mt-4">&copy; SAHCO Staff Multipurpose Cooperative Society 2023</p>
-        </div>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <!--
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <!--
     <script type="text/javascript">
         $(function () {
             $('#track').click(function () {

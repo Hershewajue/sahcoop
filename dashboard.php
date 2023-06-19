@@ -72,61 +72,77 @@ if (isset($_SESSION['fname'])) {
             </a>
         </nav>
     </div>
-    <div class="container mt-5 text-center row justify-content-center mx-auto">
-        <div class="col-sm-3 img-thumbnail mx-2">
-        <i class="fa fa-university mt-5 float-start iconz" aria-hidden="true"></i>
-            <div class="float-end">
-                <h1 class="display-6 mt-5">N90,000</h1>
-                <p class="float-end">Savings</p>
+    <div class="container img-thumbnail mt-5 p-5">
+        <div class="container text-center row justify-content-center mx-auto">
+            <h1 class="display-6 mb-5">Overview</h1>
+            <div class="col-sm-3 img-thumbnail mx-2">
+                <a href="savings.php">
+                    <i class="fa fa-university mt-5 float-start iconz text-success" aria-hidden="true"></i>
+                    <div class="float-end">
+                        <h1 class="mt-5">N90,000</h1>
+                        <p class="float-end text-muted">Savings</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm-3 img-thumbnail mx-2">
+                <a href="shares.php">
+                    <i class="fa fa-line-chart mt-5 float-start iconz text-primary" aria-hidden="true"></i>
+                    <div class="float-end">
+                        <h1 class="mt-5">N90,000</h1>
+                        <p class="float-end text-muted">Shares</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm-3 img-thumbnail mx-2">
+                <a href="coop-loans.php">
+                    <i class="fa fa-handshake-o mt-5 float-start iconz text-warning" aria-hidden="true"></i>
+                    <div class="float-end">
+                        <h1 class="mt-5">N90,000</h1>
+                        <p class="float-end text-muted">Cooperative Loans</p>
+                    </div>
+            </div>
+            </a>
+        </div>
+        <div class="container mt-5 text-center row justify-content-center mx-auto">
+            <div class="col-sm-3 img-thumbnail mx-2">
+                <a href="e-loans.php">
+                    <i class="fa fa-laptop mt-5 float-start iconz text-info" aria-hidden="true"></i>
+                    <div class="float-end">
+                        <h1 class="mt-5">N90,000</h1>
+                        <p class="float-end text-muted">Electronics Loans</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm-3 img-thumbnail mx-2">
+                <a href="commodity-loans.php">
+                    <i class="fa fa-shopping-cart mt-5 float-start iconz text-success" aria-hidden="true"></i>
+                    <div class="float-end">
+                        <h1 class="mt-5">N90,000</h1>
+                        <p class="float-end text-muted">Commodity Loans</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm-3 img-thumbnail mx-2">
+                <a href="emergency-loans.php">
+                    <i class="fa fa-exclamation-triangle mt-5 float-start iconz text-danger" aria-hidden="true"></i>
+                    <div class="float-end">
+                        <h1 class="mt-5">N90,000</h1>
+                        <p class="float-end text-muted">Emergency Loans</p>
+                    </div>
+                </a>
             </div>
         </div>
-        <div class="col-sm-3 img-thumbnail mx-2">
-        <i class="fa fa-line-chart mt-5 float-start iconz" aria-hidden="true"></i>
-            <div class="float-end">
-                <h1 class="display-6 mt-5">N90,000</h1>
-                <p class="float-end">Shares</p>
+        <div class="container mt-5 text-center row justify-content-center mx-auto">
+            <div class="col-sm-3 img-thumbnail mx-2">
+                <a href="other-loans.php">
+                    <i class="fa fa-question mt-5 float-start iconz text-danger" aria-hidden="true"></i>
+                    <div class="float-end">
+                        <h1 class="mt-5">N90,000</h1>
+                        <p class="float-end text-muted">Other Loans</p>
+                    </div>
+                </a>
             </div>
         </div>
-        <div class="col-sm-3 img-thumbnail mx-2">
-            <i class="fa fa-handshake-o mt-5 float-start iconz" aria-hidden="true"></i>
-            <div class="float-end">
-                <h1 class="display-6 mt-5">N90,000</h1>
-                <p class="float-end">Cooperative Loans</p>
-            </div>
-        </div>
-    </div>
-    <div class="container mt-5 text-center row justify-content-center mx-auto">
-        <div class="col-sm-3 img-thumbnail mx-2">
-            <i class="fa fa-laptop mt-5 float-start iconz" aria-hidden="true"></i>
-            <div class="float-end">
-                <h1 class="display-6 mt-5">N90,000</h1>
-                <p class="float-end">Electronics Loans</p>
-            </div>
-        </div>
-        <div class="col-sm-3 img-thumbnail mx-2">
-            <i class="fa fa-shopping-cart mt-5 float-start iconz" aria-hidden="true"></i>
-            <div class="float-end">
-                <h1 class="display-6 mt-5">N90,000</h1>
-                <p class="float-end">Commodity Loans</p>
-            </div>
-        </div>
-        <div class="col-sm-3 img-thumbnail mx-2">
-            <i class="fa fa-exclamation-triangle mt-5 float-start iconz" aria-hidden="true"></i>
-            <div class="float-end">
-                <h1 class="display-6 mt-5">N90,000</h1>
-                <p class="float-end">Emergency Loans</p>
-            </div>
-        </div>
-    </div>
-    <div class="container mt-5 text-center row justify-content-center mx-auto">
-        <div class="col-sm-3 img-thumbnail mx-2">
-            <i class="fa fa-university mt-5 float-start iconz" aria-hidden="true"></i>
-            <div class="float-end">
-                <h1 class="display-6 mt-5">N90,000</h1>
-                <p class="float-end">Other Loans</p>
-            </div>
-        </div>
-        
     </div>
     <div class="container-fluid mt-5 p-4 bg-dark text-white row">
         <div class="col-sm-6">
